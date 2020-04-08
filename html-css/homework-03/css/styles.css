@@ -4,15 +4,12 @@
 
 .main-menu {
   margin: 0px 0px 99px 0px;
-  width: 700px;
+  width: 573px;
 }
 .main-menu-nav {
-  /* width: auto;
-  margin: auto; */
-  /* font-size: 0px; */
   background-color: aqua;
   padding-left: 0px;
-  margin: 0px 0px 0px 0px;
+  margin: 0px;
   font-size: 0px;
 }
 
@@ -20,6 +17,7 @@ header {
   padding-left: 314px;
   padding-top: 75px;
   width: 886;
+  margin: 0px;
 }
 
 .main-menu-link {
@@ -60,12 +58,11 @@ header {
 }
 
 .main {
-  width: 1200px;
+  width: 1050px;
   height: 2079px;
-  padding: 0px 0px 0px 150px;
-  margin: 0px 0px 0px 0px;
-  /* font-size: 0px; */
+  padding-left: 150px;
 }
+
 .main-wrapper {
   width: 900px;
   font-size: 0px;
@@ -103,6 +100,7 @@ header {
   color: rgb(98, 98, 98);
   line-height: 1.714;
   text-align: left;
+  margin: 0px;
 }
 
 /* button */
