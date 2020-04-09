@@ -1,8 +1,9 @@
 .body {
-  width: 1200px;
+  width: 900px;
+  margin: 0px auto;
 }
 header {
-  padding-left: 314px;
+  padding-left: 165px;
   padding-top: 75px;
   width: 886;
   margin: 0px;
@@ -43,7 +44,6 @@ header {
   color: rgb(98, 98, 98);
   text-transform: uppercase;
   line-height: 24px;
-  text-align: center;
 }
 
 .main-menu-link a:focus,
@@ -52,12 +52,12 @@ header {
 }
 
 .main {
-  width: 1050px;
-  padding-left: 150px;
+  width: 900px;
 }
 
-.main-wrapper {
+.main-comtent-wraper {
   width: 900px;
+  margin: 0px auto;
   font-size: 0px;
 }
 
@@ -76,9 +76,6 @@ header {
   margin-right: 0px;
 }
 
-/* .main-section:nth-last-child(-n + 2) {
-  margin-bottom: 57px;
-} */
 .main-comtent-wraper {
   margin-bottom: 57px;
 }
@@ -133,5 +130,5 @@ header {
 .main-section-button {
   margin-left: 358px;
   width: 163px;
-  margin: 0 auto-150px;
+  margin: 0 auto;
 }
