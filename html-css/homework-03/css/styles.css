@@ -1,6 +1,5 @@
 .body {
   width: 1200px;
-  height: 2079px;
 }
 header {
   padding-left: 314px;
@@ -46,13 +45,14 @@ header {
   line-height: 24px;
   text-align: center;
 }
+
+.main-menu-link a:focus,
 .main-menu-link a:hover {
   color: rgb(3, 169, 243);
 }
 
 .main {
   width: 1050px;
-  height: 1980px;
   padding-left: 150px;
 }
 
@@ -68,12 +68,18 @@ header {
   margin-bottom: 133px;
   vertical-align: top;
 }
+
+.main-section:nth-last-child(-n + 2) {
+  margin-bottom: 0px;
+}
 .main-section:nth-child(2n) {
   margin-right: 0px;
 }
 
-.main-section:nth-child(5),
-.main-section:nth-child(6) {
+/* .main-section:nth-last-child(-n + 2) {
+  margin-bottom: 57px;
+} */
+.main-comtent-wraper {
   margin-bottom: 57px;
 }
 
