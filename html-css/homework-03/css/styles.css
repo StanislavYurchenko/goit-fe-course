@@ -124,6 +124,7 @@ header {
   padding: 16px 32px;
   border: 1px solid rgb(98, 98, 98);
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .main-section-button {
