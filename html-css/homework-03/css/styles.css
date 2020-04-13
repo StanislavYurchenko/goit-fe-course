@@ -1,42 +1,25 @@
-.body {
+.wraper {
   width: 900px;
   margin: 0px auto;
 }
-header {
-  padding-left: 164px;
-  padding-top: 74px;
-  width: 886;
-  margin: 0px 0px 98px 0px;
-}
-.main-menu {
-  margin: 0px;
-  width: 572px;
-}
+
 .main-menu-nav {
-  padding-left: 0px;
-  margin: 0px;
+  list-style: none;
   font-size: 0px;
+  padding: 72px 0px 100px 0px;
+  text-align: center;
 }
 
 .main-menu-link {
   display: inline-block;
+  margin-right: 106px;
 }
 
-.main-menu-link:nth-child(1) {
-  margin-right: 120px;
-}
-.main-menu-link:nth-child(2) {
-  margin-right: 104px;
-}
-.main-menu-link:nth-child(3) {
-  margin-right: 94px;
-}
-.main-menu-link:nth-child(4) {
+.main-menu-link:last-child {
   margin-right: 0px;
 }
 
 .main-menu-link a {
-  display: block;
   font-size: 14px;
   text-align: center;
   text-decoration: none;
@@ -51,38 +34,29 @@ header {
   color: rgb(3, 169, 243);
 }
 
-.main {
-  width: 900px;
-  margin-bottom: 70px;
-}
-
-.main-comtent-wraper {
-  width: 900px;
-  margin: 0px auto;
+.main-content {
   font-size: 0px;
 }
 
 .main-section {
   display: inline-block;
   width: 420px;
-  margin-right: 60px;
-  margin-bottom: 132px;
   vertical-align: top;
-}
-
-.main-section:nth-last-child(-n + 2) {
-  margin-bottom: 0px;
+  margin: 0px 60px 132px 0px;
 }
 .main-section:nth-child(2n) {
   margin-right: 0px;
 }
+.main-section:nth-last-child(-n + 2) {
+  margin-bottom: 0px;
+}
 
-.main-comtent-wraper {
+.main-content {
   margin-bottom: 56px;
 }
 
 .main-section-image {
-  margin-bottom: 32px;
+  margin: 0px 0px 32px 0px;
 }
 
 .main-section-text {
@@ -91,9 +65,8 @@ header {
   color: rgb(180, 173, 158);
   text-transform: uppercase;
   line-height: 1.2;
-  margin-bottom: 32px;
-  margin-top: 0px;
   font-weight: 300;
+  margin: 0px 0px 32px 0px;
 }
 
 .main-section-heading {
@@ -101,8 +74,7 @@ header {
   font-family: "Playfair Display", serif;
   color: rgb(98, 98, 98);
   line-height: 1.2;
-  margin-bottom: 40px;
-  margin-top: 0px;
+  margin: 0px 0px 40px 0px;
 }
 
 .main-section-paragraph {
@@ -114,8 +86,12 @@ header {
   margin: 0px;
 }
 
-.main-section-button button {
-  display: inline-block;
+.main-button {
+  text-align: center;
+  padding-bottom: 72px;
+}
+
+.main-button button {
   font-size: 20px;
   font-family: "Playfair Display", serif;
   color: rgb(98, 98, 98);
@@ -123,11 +99,5 @@ header {
   background-color: rgb(255, 255, 255);
   padding: 16px 32px;
   border: 1px solid rgb(98, 98, 98);
-  margin: 0 auto;
   cursor: pointer;
-}
-
-.main-section-button {
-  width: 164px;
-  margin: 0 auto;
 }
