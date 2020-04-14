@@ -1,0 +1,111 @@
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* .wraper {
+  width: 900px;
+  margin: 0px auto;
+} */
+
+/* .main-menu-nav {
+  list-style: none;
+  font-size: 0px;
+  padding: 72px 0px 100px 0px;
+  text-align: center;
+} */
+
+/* .main-menu-link {
+  display: inline-block;
+  margin-right: 106px;
+} */
+
+/* .main-menu-link:last-child {
+  margin-right: 0px;
+} */
+
+/* .main-menu-link a {
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  color: rgb(98, 98, 98);
+  text-transform: uppercase;
+  line-height: 24px;
+} */
+
+/* .main-menu-link a:focus,
+.main-menu-link a:hover {
+  color: rgb(3, 169, 243);
+} */
+
+/* .main-content {
+  font-size: 0px;
+} */
+
+/* .main-section {
+  display: inline-block;
+  width: 420px;
+  vertical-align: top;
+  margin: 0px 60px 132px 0px;
+} */
+
+/* .main-section:nth-child(2n) {
+  margin-right: 0px;
+} */
+
+/* .main-section:nth-last-child(-n + 2) {
+  margin-bottom: 0px;
+} */
+
+/* .main-content {
+  margin-bottom: 56px;
+} */
+
+/* .main-section-image {
+  margin: 0px 0px 32px 0px;
+} */
+
+/* .main-section-text {
+  font-size: 14px;
+  font-family: "Ubuntu", sans-serif;
+  color: rgb(180, 173, 158);
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: 300;
+  margin: 0px 0px 32px 0px;
+} */
+
+/* .main-section-heading {
+  font-size: 30px;
+  font-family: "Playfair Display", serif;
+  color: rgb(98, 98, 98);
+  line-height: 1.2;
+  margin: 0px 0px 40px 0px;
+} */
+
+/* .main-section-paragraph {
+  font-size: 14px;
+  font-family: "Playfair Display", serif;
+  color: rgb(98, 98, 98);
+  line-height: 1.714;
+  text-align: left;
+  margin: 0px;
+} */
+
+/* .main-button {
+  text-align: center;
+  padding-bottom: 72px;
+} */
+
+/* .main-button button {
+  font-size: 20px;
+  font-family: "Playfair Display", serif;
+  color: rgb(98, 98, 98);
+  line-height: 1.2;
+  background-color: rgb(255, 255, 255);
+  padding: 16px 32px;
+  border: 1px solid rgb(98, 98, 98);
+  cursor: pointer;
+} */
