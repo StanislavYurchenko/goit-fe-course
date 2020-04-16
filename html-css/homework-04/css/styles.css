@@ -123,6 +123,10 @@ img {
   margin-bottom: 0px;
 }
 
+.featured-item a {
+  display: block;
+}
+
 .featured-item-box {
   font-size: 18px;
   font-family: "Roboto", sans-serif;
