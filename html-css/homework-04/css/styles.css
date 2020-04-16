@@ -222,4 +222,5 @@ img {
   width: 160px;
   height: 52px;
   cursor: pointer;
+  border: none;
 }
