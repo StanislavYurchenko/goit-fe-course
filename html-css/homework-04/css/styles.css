@@ -11,7 +11,7 @@
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -157,7 +157,7 @@ img {
   padding: 4px 0px;
 }
 
-.featured-item:hover .featured-item-header {
+.featured-item:hover .featured-item-box {
   background-color: rgb(26, 188, 156);
 }
 
