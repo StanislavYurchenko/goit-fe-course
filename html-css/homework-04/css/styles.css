@@ -211,16 +211,20 @@ img {
 }
 
 .blog-item-button {
-  font-size: 16px;
-  font-family: "Open Sans", sans-serif;
-  color: rgb(255, 255, 255);
-  line-height: 26px;
-  text-align: center;
-  font-weight: 300;
   border-radius: 3px;
   background-color: rgb(78, 198, 171);
   width: 160px;
   height: 52px;
   cursor: pointer;
   border: none;
+}
+
+.blog-item-button a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(255, 255, 255);
+  line-height: 26px;
+  text-align: center;
+  font-weight: 300;
 }
