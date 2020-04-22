@@ -1,6 +1,6 @@
 .img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -80,7 +80,6 @@
 .section-slider {
   position: relative;
   margin-bottom: 96px;
-  /* position: relative; */
 }
 
 .section-slider-items {
@@ -88,7 +87,6 @@
   margin: 0px;
   padding: 0px;
   list-style: none;
-  /* position: relative; */
 }
 
 .section-slider-item {
@@ -256,7 +254,6 @@
   border-style: solid;
   background-color: rgb(0, 0, 0);
   opacity: 0;
-  /* opacity: 0.549; */
   position: absolute;
   width: 234px;
   height: 262px;
@@ -276,7 +273,6 @@
   width: 166px;
   height: 108px;
   z-index: 2;
-  /* opacity: 0; */
 
   top: 90px;
   left: 50%;
