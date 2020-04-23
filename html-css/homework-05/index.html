@@ -20,60 +20,63 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="wraper">
-      <nav class="main-menu clearfix">
-        <a href="#" class="main-menu-logo">mart</a>
-        <ul class="main-menu-nav">
-          <li class="main-menu-item">
-            <a href="#" class="main-menu-link">home</a>
-          </li>
-          <li class="main-menu-item">
-            <a href="#" class="main-menu-link">about us</a>
-          </li>
-          <li class="main-menu-item">
-            <a href="#" class="main-menu-link">page</a>
-          </li>
-          <li class="main-menu-item">
-            <a href="#" class="main-menu-link">shop</a>
-          </li>
-          <li class="main-menu-item">
-            <a href="#" class="main-menu-link">blog</a>
-          </li>
-          <li class="main-menu-item">
-            <a href="#" class="main-menu-link">contact us</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div class="background-header">
+      <header class="wraper">
+        <nav class="main-menu clearfix">
+          <a href="#" class="main-menu-logo">mart</a>
+          <ul class="main-menu-nav">
+            <li class="main-menu-item">
+              <a href="#" class="main-menu-link">home</a>
+            </li>
+            <li class="main-menu-item">
+              <a href="#" class="main-menu-link">about us</a>
+            </li>
+            <li class="main-menu-item">
+              <a href="#" class="main-menu-link">page</a>
+            </li>
+            <li class="main-menu-item">
+              <a href="#" class="main-menu-link">shop</a>
+            </li>
+            <li class="main-menu-item">
+              <a href="#" class="main-menu-link">blog</a>
+            </li>
+            <li class="main-menu-item">
+              <a href="#" class="main-menu-link">contact us</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
     <div class="background-main">
-      <main class="wraper">
-        <section class="section-slider">
+      <main class="">
+        <div class="section-slider">
           <ul class="section-slider-items">
             <li class="section-slider-item">
               <img
                 class="section-slider-image"
                 src="img/slider/slider_photo.jpg"
                 alt="woman"
-                width="1600"
                 height="600"
+                width="1600"
               />
-              <div class="slider-image-effect"></div>
             </li>
           </ul>
-          <div class="slider-box">
+          <div class="slider-box-header">
             <h2 class="slider-tours">AFFORDABLE PARIS TOURS</h2>
             <p class="slider-descriptions">
               CITY TOURS / TOUR TICKETS / TOUR GUIDES
             </p>
           </div>
-          <button class="slider-button slider-button-left">&lt;</button>
-          <button class="slider-button slider-button-right">&gt;</button>
-        </section>
+          <div class="slider-box-button clearfix">
+            <button class="slider-button slider-button-left">&lt;</button>
+            <button class="slider-button slider-button-right">&gt;</button>
+          </div>
+        </div>
 
-        <section class="section-collection">
+        <section class="section-collection wraper">
           <h2 class="section-title">NEW COLLECTION</h2>
           <ul class="collection-items clearfix">
-            <il class="collection-item">
+            <li class="collection-item">
               <a href="#" class="collection-item-link">
                 <img
                   src="img/items/item-01.jpg"
@@ -86,27 +89,28 @@
               </a>
               <ul class="icon-boxes">
                 <li class="icon-box">
-                  <a class="icon-heart icons" href="#"></a>
+                  <button class="icon-heart icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-arov icons" href="#"></a>
+                  <button class="icon-arov icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-clock icons" href="#"></a>
+                  <button class="icon-clock icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-cart icons" href="#">add to cart</a>
+                  <button class="icon-cart icons" type="button">
+                    add to cart
+                  </button>
                 </li>
               </ul>
-
               <a href="#" class="collection-item-link">
                 <div class="collection-item-box clearfix">
-                  <h3 class="collection-item-header">Cool lingerie</h3>
-                  <p class="collection-item-price">56$</p>
+                  <h3 class="collection-item-header">WOMAN shirt</h3>
+                  <p class="collection-item-price">31$</p>
                 </div>
               </a>
-            </il>
-            <il class="collection-item">
+            </li>
+            <li class="collection-item">
               <a href="#" class="collection-item-link">
                 <img
                   src="img/items/item-02.jpg"
@@ -119,27 +123,28 @@
               </a>
               <ul class="icon-boxes">
                 <li class="icon-box">
-                  <a class="icon-heart icons" href="#"></a>
+                  <button class="icon-heart icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-arov icons" href="#"></a>
+                  <button class="icon-arov icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-clock icons" href="#"></a>
+                  <button class="icon-clock icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-cart icons" href="#">add to cart</a>
+                  <button class="icon-cart icons" type="button">
+                    add to cart
+                  </button>
                 </li>
               </ul>
-
               <a href="#" class="collection-item-link">
                 <div class="collection-item-box clearfix">
-                  <h3 class="collection-item-header">Cool lingerie</h3>
-                  <p class="collection-item-price">56$</p>
+                  <h3 class="collection-item-header">YELLOW Tshirt</h3>
+                  <p class="collection-item-price">21$</p>
                 </div>
               </a>
-            </il>
-            <il class="collection-item">
+            </li>
+            <li class="collection-item">
               <a href="#" class="collection-item-link">
                 <img
                   src="img/items/item-03.jpg"
@@ -152,27 +157,28 @@
               </a>
               <ul class="icon-boxes">
                 <li class="icon-box">
-                  <a class="icon-heart icons" href="#"></a>
+                  <button class="icon-heart icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-arov icons" href="#"></a>
+                  <button class="icon-arov icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-clock icons" href="#"></a>
+                  <button class="icon-clock icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-cart icons" href="#">add to cart</a>
+                  <button class="icon-cart icons" type="button">
+                    add to cart
+                  </button>
                 </li>
               </ul>
-
               <a href="#" class="collection-item-link">
                 <div class="collection-item-box clearfix">
                   <h3 class="collection-item-header">Cool lingerie</h3>
                   <p class="collection-item-price">56$</p>
                 </div>
               </a>
-            </il>
-            <il class="collection-item">
+            </li>
+            <li class="collection-item">
               <a href="#" class="collection-item-link">
                 <img
                   src="img/items/item-04.jpg"
@@ -185,26 +191,27 @@
               </a>
               <ul class="icon-boxes">
                 <li class="icon-box">
-                  <a class="icon-heart icons" href="#"></a>
+                  <button class="icon-heart icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-arov icons" href="#"></a>
+                  <button class="icon-arov icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-clock icons" href="#"></a>
+                  <button class="icon-clock icons" type="button"></button>
                 </li>
                 <li class="icon-box">
-                  <a class="icon-cart icons" href="#">add to cart</a>
+                  <button class="icon-cart icons" type="button">
+                    add to cart
+                  </button>
                 </li>
               </ul>
-
               <a href="#" class="collection-item-link">
                 <div class="collection-item-box clearfix">
-                  <h3 class="collection-item-header">Cool lingerie</h3>
-                  <p class="collection-item-price">56$</p>
+                  <h3 class="collection-item-header">Blue Tshirt</h3>
+                  <p class="collection-item-price">26$</p>
                 </div>
               </a>
-            </il>
+            </li>
           </ul>
         </section>
       </main>
