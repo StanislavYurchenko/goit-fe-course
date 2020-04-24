@@ -294,9 +294,8 @@ li {
   height: 108px;
   z-index: 2;
   top: 90px;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translatex(-50%);
   padding: 0;
   margin: 0;
   font-size: 0px;
