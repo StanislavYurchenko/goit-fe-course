@@ -61,6 +61,7 @@ li {
   color: #555252;
   line-height: 32px;
   padding: 34px 0 30px;
+  font-size: 0px;
 }
 
 .main-menu-logo {
@@ -80,12 +81,8 @@ li {
   float: right;
 }
 
-.main-menu-nav {
-  height: 32px;
-}
-
 .main-menu-item {
-  display: inline-block;
+  float: left;
   height: 32px;
 }
 
@@ -109,31 +106,19 @@ li {
 }
 
 .section-slider {
-  display: block;
-  position: relative;
   font-size: 0px;
-  /* padding-bottom: 96px; */
-}
-
-.section-slider-items {
-  display: block;
-  width: inherit;
-  position: relative;
+  text-align: center;
 }
 
 .section-slider-item {
-  width: inherit;
-  width: 100%;
-  height: 600px;
   position: relative;
 }
 
 .section-slider-item::after {
   display: block;
   content: "";
-  width: inherit;
-  max-width: 1600px;
-  height: inherit;
+  width: 100%;
+  height: 600px;
   background-color: rgba(0, 0, 2, 0.522);
   position: absolute;
   left: 50%;
@@ -143,9 +128,6 @@ li {
 }
 
 .section-slider-image {
-  position: absolute;
-  left: 50%;
-  transform: translatex(-50%);
   z-index: 1;
   object-fit: cover;
   min-width: 1110px;
@@ -158,10 +140,10 @@ li {
   top: 38%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 770px;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
   z-index: 4;
+  padding: 0 170px;
 }
 
 .slider-tours {
@@ -185,8 +167,6 @@ li {
 }
 
 .slider-box-button {
-  width: 1110px;
-  height: 104px;
   position: absolute;
   left: 50%;
   top: 40%;
@@ -276,8 +256,8 @@ li {
   background-color: rgba(0, 0, 0);
   opacity: 0;
   position: absolute;
-  width: 254px;
-  height: 282px;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   z-index: 1;
