@@ -391,7 +391,7 @@ li {
   border: 1px solid #cccccc;
 }
 
-input::placeholder {
+.footer__placeholder-box input::placeholder {
   font-size: 15px;
   font-family: "Roboto";
   color: rgb(204, 204, 204);
