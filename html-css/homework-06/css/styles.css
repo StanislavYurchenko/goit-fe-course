@@ -10,6 +10,7 @@
   clip-path: inset(50%);
   margin: -1px;
 }
+
 .img {
   display: block;
   max-width: 100%;
@@ -253,7 +254,6 @@ li {
 .team__member-photo-box {
   position: relative;
   margin-bottom: 30px;
-  transition: all 0.2s linear;
 }
 
 .team__member-photo-box::after {
@@ -265,20 +265,14 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(
-    to top,
-    rgba(252, 227, 138, 0),
-    rgba(243, 129, 129, 0)
-  );
+  background: linear-gradient(to top, rgb(252, 227, 138), rgba(243, 129, 129));
+  opacity: 0;
+  transition: all 0.2s linear;
 }
 
 .team__list-member:hover .team__member-photo-box::after {
-  background: linear-gradient(
-    to top,
-    rgba(252, 227, 138, 0.9),
-    rgba(243, 129, 129, 0.9)
-  );
-  z-index: 1;
+  background: linear-gradient(to top, rgba(252, 227, 138), rgba(243, 129, 129));
+  opacity: 0.9;
 }
 
 .team__list-member:hover .team__member-photo-box {
@@ -296,7 +290,6 @@ li {
   transform: translate(-50%, -50%);
   justify-content: space-between;
   z-index: 2;
-  transition: all 0.2s linear;
 }
 
 .team__list-member__social-item {
