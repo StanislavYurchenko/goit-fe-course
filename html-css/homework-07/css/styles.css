@@ -1,0 +1,300 @@
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  outline: 1px solid blue;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wraper {
+  width: 940px;
+  margin: 0px auto;
+}
+
+ul,
+li {
+  display: block;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* pinyon-script-regular - latin */
+@font-face {
+  font-family: "Pinyon Script";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Pinyon Script"), local("PinyonScript"),
+    url("../fonts/pinyon-script-v10-latin-regular.woff2") format("woff2"),
+    url("../fonts/pinyon-script-v10-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"),
+    url("../fonts/montserrat-v14-latin-regular.woff2") format("woff2"),
+    url("../fonts/montserrat-v14-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"),
+    url("../fonts/montserrat-v14-latin-700.woff2") format("woff2"),
+    url("../fonts/montserrat-v14-latin-700.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Adamina";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Adamina Regular"), local("Adamina-Regular"),
+    url("../fonts/adamina-v13-latin-regular.woff2") format("woff2"),
+    url("../fonts/adamina-v13-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "DM Serif Text";
+  font-style: italic;
+  font-weight: 400;
+  src: local("DM Serif Text Italic"), local("DMSerifText-Italic"),
+    url("../fonts/dm-serif-text-v4-latin-italic.woff2") format("woff2"),
+    url("../fonts/dm-serif-text-v4-latin-italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("../fonts/roboto-slab-v11-latin-regular.woff2") format("woff2"),
+    url("../fonts/roboto-slab-v11-latin-regular.woff") format("woff");
+}
+
+/* HEADER */
+
+.main-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 50px 0;
+}
+
+.main-menu__logo {
+  text-decoration: none;
+  font-family: "Pinyon Script", cursive;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fed136;
+}
+
+.main-menu__list {
+  display: flex;
+}
+
+.main-menu__item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.main-menu__link {
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  color: #222222;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s linear;
+}
+
+.main-menu__link:focus,
+.main-menu__link:hover {
+  color: #fed136;
+}
+
+/* SERVICES */
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0 102px;
+}
+
+.section__header {
+  margin: 0 0 18px;
+  font-size: 40px;
+  font-family: "Montserrat", sans-serif;
+  color: #222222;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+}
+
+.section__description {
+  margin: 0 0 50px;
+  font-family: "DM Serif Text";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgb(119, 119, 119);
+  line-height: 1.2;
+}
+
+.servises__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.servises__list-item {
+  flex-basis: 280px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servises__list-item::before {
+  content: "";
+  border: 4px solid #fed136;
+  border-radius: 50%;
+  height: 74px;
+  width: 74px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 28px 0 30px;
+}
+
+.servises__list-item:nth-child(1)::before {
+  background-image: url(../img/icons/icon-building.png);
+}
+
+.servises__list-item:nth-child(2)::before {
+  background-image: url(../img/icons/icon-checkbox.png);
+}
+
+.servises__list-item:nth-child(3)::before {
+  background-image: url(../img/icons/icon-lock.png);
+}
+
+.servises__list-item-header {
+  margin: 0 0 20px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(34, 34, 34);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.servises__list-item-description {
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-family: "Roboto Slab";
+  color: rgb(119, 119, 119);
+  line-height: 1.7;
+  letter-spacing: -0.025em;
+  text-align: center;
+}
+
+/* CONTACT US */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.contact__form-input[name="name"],
+.contact__form-input[name="email"],
+.contact__form-input[name="subject"] {
+  width: 454px;
+  height: 54px;
+}
+
+textarea.contact__form-input[name="massege"] {
+  width: 454px;
+  min-height: 210px;
+  resize: none;
+}
+
+.contact__form-btm {
+  width: 240px;
+  height: 66px;
+  background-color: rgb(254, 209, 54);
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  font-size: 18px;
+  font-family: "Montserrat";
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.contact__form-input {
+  font-size: 14px;
+  font-family: "Montserrat, sans-serif";
+  color: rgb(34, 34, 34);
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  padding: 20px;
+  vertical-align: top;
+}
+
+.contact__form-input::placeholder {
+  font-size: 14px;
+  font-family: "Montserrat, sans-serif";
+  color: rgb(187, 187, 187);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.contact__form-box {
+  display: flex;
+  justify-content: space-between;
+  width: inherit;
+}
+
+.contact__form-box-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
