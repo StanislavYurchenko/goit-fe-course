@@ -17,9 +17,9 @@
   height: auto;
 }
 
-* {
+/* * {
   outline: 1px solid blue;
-}
+} */
 
 *,
 *::before,
@@ -45,7 +45,6 @@ li {
   margin: 0;
 }
 
-/* pinyon-script-regular - latin */
 @font-face {
   font-family: "Pinyon Script";
   font-style: normal;
@@ -100,8 +99,6 @@ li {
     url("../fonts/roboto-slab-v11-latin-regular.woff") format("woff");
 }
 
-/* HEADER */
-
 .main-menu {
   display: flex;
   justify-content: space-between;
@@ -140,8 +137,6 @@ li {
 .main-menu__link:hover {
   color: #fed136;
 }
-
-/* SERVICES */
 
 .services {
   display: flex;
@@ -215,7 +210,8 @@ li {
 }
 
 .servises__list-item-description {
-  margin: 0 0 20px;
+  padding: 0 0 20px;
+  margin: 0;
   font-size: 14px;
   font-family: "Roboto Slab";
   color: rgb(119, 119, 119);
@@ -224,12 +220,22 @@ li {
   text-align: center;
 }
 
-/* CONTACT US */
+.wraper-contact {
+  background-color: rgb(34, 34, 34);
+  background-image: url(../img/map-image.png);
+  background-repeat: no-repeat;
+  background-position: right, bottom;
+}
 
 .contact {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 110px 0;
+}
+
+.contact .section__header {
+  color: #ffffff;
 }
 
 .contact__form {
@@ -250,6 +256,11 @@ textarea.contact__form-input[name="massege"] {
   width: 454px;
   min-height: 210px;
   resize: none;
+  display: flex;
+}
+
+.contact .section__description {
+  margin-bottom: 80px;
 }
 
 .contact__form-btm {
@@ -264,6 +275,7 @@ textarea.contact__form-input[name="massege"] {
   color: rgb(255, 255, 255);
   font-weight: bold;
   text-transform: uppercase;
+  margin-top: 30px;
 }
 
 .contact__form-input {
