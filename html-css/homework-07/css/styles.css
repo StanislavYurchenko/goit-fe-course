@@ -6,7 +6,7 @@
   overflow: hidden;
   border: 0;
   padding: 0;
-  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
   margin: -1px;
 }
@@ -309,4 +309,12 @@ textarea.contact__form-input[name="massege"] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.contact__form-input:valid:required {
+  outline: 2px solid greenyellow;
+}
+
+.contact__form-input:invalid:required {
+  outline: 2px solid red;
 }
