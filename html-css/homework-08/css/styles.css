@@ -1,0 +1,175 @@
+:root {
+  --first-font-family: "Montserrat", sans-serif;
+  --first-font-weight: 700;
+  --first-font-size: 14px;
+
+  --second-font-family: "Roboto", sans-serif;
+  --second-font-weight: 300;
+  --second-font-size: 14px;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  /* clip-path: inset(50%); */
+  clip-path: inset(50%, 50%);
+  margin: -1px;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  outline: 1px solid blue;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wraper {
+  min-width: 320px;
+  margin: 0px auto;
+  background-color: greenyellow;
+}
+
+ul,
+li {
+  display: block;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"),
+    url("../fonts/montserrat-v14-latin-700.woff2") format("woff2"),
+    url("../fonts/montserrat-v14-latin-700.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Roboto Light"), local("Roboto-Light"),
+    url("../fonts/roboto-v20-latin-300.woff2") format("woff2"),
+    url("../fonts/roboto-v20-latin-300.woff") format("woff");
+}
+
+/* HEADER */
+
+body {
+  font-family: var(--first-font-family);
+  font-weight: var(--first-font-weight);
+  font-size: var(--first-font-size);
+  color: #ffffff;
+}
+
+.header-wraper {
+  background-color: rgb(26, 25, 21);
+  background-image: url(../img/background.png);
+  background-position: center;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-menu__nav {
+  padding-bottom: 118px;
+}
+
+.main-menu__nav-list {
+  display: flex;
+  justify-content: center;
+}
+
+.main-menu__nav-item {
+  display: flex;
+  /* padding: 10px 20px; */
+}
+
+.main-menu__nav-item-link {
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: all 0.2s linear;
+}
+
+.main-menu__nav-item-link:focus,
+.main-menu__nav-item-link:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 20px;
+}
+
+.main-menu__logo-link {
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  margin: 0 0 35px;
+}
+
+.main-menu__header {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin: 0 0 20px;
+}
+
+.main-menu__text {
+  font-family: var(--second-font-family);
+  font-weight: var(--second-font-weight);
+  font-size: 18px;
+  text-align: center;
+  padding: 0 20px;
+  margin: 0 0 18px;
+}
+
+.main-menu__search-link {
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px 48px;
+  background-color: rgb(255, 78, 80);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: all 0.2s linear;
+  margin: 0 0 138px;
+}
+
+.main-menu__search-link:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+/* SECTION PARTNERS */
+main-wraper
+partners
+partners__list
+partners__item
+partners__item-photo
+partners__item-name
+partners__item-about
