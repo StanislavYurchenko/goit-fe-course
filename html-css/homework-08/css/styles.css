@@ -371,6 +371,11 @@ body {
     justify-content: space-between;
   }
 
+  .partners__item:nth-of-type(2),
+  .partners__item:last-of-type {
+    order: 1;
+  }
+
   .partners__more-partners-link {
     padding-left: 30px;
     padding-right: 30px;
@@ -387,20 +392,9 @@ body {
     max-width: 400px;
   }
 
-  .partners__item:first-of-type {
-    margin-bottom: 28px;
-  }
-
-  .partners__item:nth-of-type(2) {
-    order: 1;
-  }
-
+  .partners__item:first-of-type,
   .partners__item:nth-of-type(3) {
     margin-bottom: 28px;
-  }
-
-  .partners__item:last-of-type {
-    order: 1;
   }
 }
 
