@@ -139,9 +139,7 @@ li {
 }
 
 .services {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   padding: 50px 0 102px;
 }
 
@@ -228,9 +226,7 @@ li {
 }
 
 .contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   padding: 110px 0;
 }
 
@@ -281,7 +277,7 @@ textarea.contact__form-input[name="massege"] {
 .contact__form-input {
   font-size: 14px;
   font-family: "Montserrat, sans-serif";
-  color: rgb(34, 34, 34);
+  color: rgb(119, 119, 119);
   font-weight: bold;
   line-height: 1.2;
   letter-spacing: -0.025em;
