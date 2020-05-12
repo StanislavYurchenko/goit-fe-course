@@ -27,28 +27,28 @@ html {
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .container {
     max-width: 540px;
-  }
+  } */
 }
 /* 768px/720px */
-@media (min-width: 748px) {
+@media (min-width: 768px) {
   .container {
-    max-width: 720px;
+    max-width: 748px;
   }
 }
 /* 992px/960px */
-@media (min-width: 942px) {
+@media (min-width: 960px) {
   .container {
-    max-width: 910px;
+    max-width: 940px;
   }
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
-  }
+  } */
 }
 
 .container-fluid {
@@ -392,7 +392,7 @@ html {
   margin-left: 91.666667%;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .col-sm {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -591,7 +591,7 @@ html {
   .offset-sm-11 {
     margin-left: 91.666667%;
   }
-}
+} */
 /* 748px */
 @media (min-width: 748px) {
   .col-md {
@@ -994,7 +994,7 @@ html {
     margin-left: 91.666667%;
   }
 }
-
+/* 
 @media (min-width: 1200px) {
   .col-xl {
     -ms-flex-preferred-size: 0;
@@ -1194,7 +1194,7 @@ html {
   .offset-xl-11 {
     margin-left: 91.666667%;
   }
-}
+} */
 
 .d-none {
   display: none !important;
@@ -1236,7 +1236,7 @@ html {
   display: inline-flex !important;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .d-sm-none {
     display: none !important;
   }
@@ -1268,7 +1268,7 @@ html {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important;
   }
-}
+} */
 /* 768px */
 @media (min-width: 748px) {
   .d-md-none {
@@ -1338,7 +1338,7 @@ html {
   }
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .d-xl-none {
     display: none !important;
   }
@@ -1370,7 +1370,7 @@ html {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important;
   }
-}
+} */
 
 @media print {
   .d-print-none {
@@ -1568,7 +1568,7 @@ html {
   align-self: stretch !important;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .flex-sm-row {
     -webkit-box-orient: horizontal !important;
     -webkit-box-direction: normal !important;
@@ -1702,7 +1702,7 @@ html {
     -ms-flex-item-align: stretch !important;
     align-self: stretch !important;
   }
-}
+} */
 /* 768px */
 @media (min-width: 748px) {
   .flex-md-row {
@@ -1976,7 +1976,7 @@ html {
   }
 }
 
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .flex-xl-row {
     -webkit-box-orient: horizontal !important;
     -webkit-box-direction: normal !important;
@@ -2110,5 +2110,5 @@ html {
     -ms-flex-item-align: stretch !important;
     align-self: stretch !important;
   }
-}
+} */
 /*# sourceMappingURL=bootstrap-grid.css.map */
