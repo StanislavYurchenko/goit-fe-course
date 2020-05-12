@@ -131,6 +131,9 @@ body {
   margin: 0 auto;
   letter-spacing: -0.03em;
 }
+.main-menu__header-br {
+  display: block;
+}
 
 .main-menu__text {
   font-family: var(--second-font-family);
