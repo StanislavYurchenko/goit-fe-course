@@ -1,0 +1,76 @@
+visibilty-hiden
+
+link
+
+icon
+
+container
+
+btn
+
+img
+
+banner
+button
+
+title 
+
+subtitle
+
+header
+
+body
+
+section
+  section__title 
+  section__subtitle
+  section__desc
+  section__content
+  
+page-nav
+
+site-logo
+  site-logo__link
+
+site-nav
+  site-nav__item
+  site-nav__link
+  site-nav__btn
+    site-nav__btn--icons
+    
+
+site-header
+  site-header__title 
+  site-header__subtitle 
+  site-header__button
+
+  
+services
+  servises__item
+    servises__item--tools
+  servises__item-title 
+  services__item-desc
+
+team
+
+card
+  card__img
+  card__name
+  card__position
+  card__socials
+
+socials
+  social__link
+  social__img
+
+footer
+
+copyright
+  copyright__link
+
+form
+  form__input
+  form__btn
+   
+  
+

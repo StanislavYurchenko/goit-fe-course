@@ -54,7 +54,7 @@ body {
 
 .header-wraper {
   background-color: rgb(26, 25, 21);
-  background-image: url(../img/background.png);
+  background-image: url(../img/background-md.png);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -241,6 +241,7 @@ body {
   .header-wraper {
     padding-top: 16px;
     padding-bottom: 140px;
+    background-image: url(../img/background-md.png);
   }
 
   .main-menu {
@@ -293,6 +294,7 @@ body {
   .header-wraper {
     padding-top: 38px;
     padding-bottom: 232px;
+    background-image: url(../img/background-lg.png);
   }
 
   .main-menu {

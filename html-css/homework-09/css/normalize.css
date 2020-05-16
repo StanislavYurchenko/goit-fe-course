@@ -350,10 +350,6 @@ template {
   display: none;
 }
 
-@viewport {
-  width: device-width;
-  zoom: 1;
-}
 .img {
   display: block;
   max-width: 100%;
