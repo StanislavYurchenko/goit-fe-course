@@ -27,7 +27,7 @@ section
   section__desc
   section__content
   
-page-nav
+site-nav
 
 site-logo
   site-logo__link
@@ -46,12 +46,17 @@ site-header
 
   
 services
+  services__title 
+  services__subtitle
+  services__desc
+  servises__list
+    servises__list--tools
   servises__item
-    servises__item--tools
   servises__item-title 
   services__item-desc
 
 team
+  team__list
 
 card
   card__img
