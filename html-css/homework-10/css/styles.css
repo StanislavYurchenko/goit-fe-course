@@ -50,16 +50,18 @@
 }
 
 * {
-  outline: 1px solid blue;
+  /* outline: 1px solid blue; */
 }
 
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -72,6 +74,7 @@
   border: 0;
   padding: 0;
   clip: rect(0, 0, 0, 0);
+  -webkit-clip-path: inset(50%);
   clip-path: inset(50%);
   margin: -1px;
 }
@@ -139,6 +142,16 @@
 }
 
 .header__background {
+  background: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      from(rgba(252, 227, 138, 0.9)),
+      to(rgba(243, 129, 129, 0.9))
+    ),
+    url("../img/vulture.jpg");
+  background: -o-linear-gradient(bottom, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%),
+    url("../img/vulture.jpg");
   background: linear-gradient(0deg, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%),
     url("../img/vulture.jpg");
   background-repeat: no-repeat;
@@ -147,7 +160,11 @@
 }
 
 .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
   align-items: baseline;
   margin-bottom: 150px;
   font-family: var(--first-font-family);
@@ -163,11 +180,17 @@
   color: inherit;
   font-weight: bold;
   line-height: 1.2;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
 .site-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -185,6 +208,8 @@
   color: inherit;
   text-transform: uppercase;
   line-height: 1.2;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
@@ -195,6 +220,8 @@
   width: 0;
   background-color: rgb(255, 255, 255);
   margin: 10px auto 0;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
@@ -212,6 +239,8 @@
 
 .site-nav__icon {
   fill: rgb(255, 255, 255);
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
@@ -251,6 +280,8 @@
   line-height: 1;
   padding: 10px 28px;
   background: transparent;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
@@ -301,14 +332,24 @@
 }
 
 .services__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
 .services__item {
+  -ms-flex-preferred-size: 392px;
   flex-basis: 392px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 20px 0;
 }
@@ -321,6 +362,7 @@
 }
 
 .services__item-wraper {
+  -ms-flex-preferred-size: 300px;
   flex-basis: 300px;
   text-align: left;
 }
@@ -347,7 +389,11 @@
 }
 
 .team__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -366,10 +412,20 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgb(252, 227, 138)),
+    to(rgb(243, 129, 129))
+  );
+  background-image: -o-linear-gradient(rgb(252, 227, 138), rgb(243, 129, 129));
   background-image: linear-gradient(rgb(252, 227, 138), rgb(243, 129, 129));
   opacity: 0;
   z-index: 1;
   top: 0;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 
@@ -383,6 +439,8 @@
 .card__img-box--effect {
   top: 0;
   left: 0;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
@@ -392,14 +450,20 @@
 }
 
 .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 2;
   background-color: rgb(243, 129, 129);
   opacity: 0;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
@@ -408,12 +472,20 @@
 }
 
 .social__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 60px;
   height: 60px;
   background-color: rgb(252, 227, 138);
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
@@ -421,6 +493,8 @@
   width: 32px;
   height: 32px;
   fill: rgb(243, 129, 129);
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
@@ -458,8 +532,14 @@
 }
 
 .footer__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 10px 0;
 }
@@ -476,6 +556,8 @@
 }
 
 .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border: 1px solid rgb(229, 229, 229);
 }
@@ -497,6 +579,30 @@
   outline: 1px solid rgb(149, 225, 211);
 }
 
+.form__input::-webkit-input-placeholder {
+  font-style: italic;
+  color: rgb(204, 204, 204);
+  font-weight: 300;
+}
+
+.form__input::-moz-placeholder {
+  font-style: italic;
+  color: rgb(204, 204, 204);
+  font-weight: 300;
+}
+
+.form__input:-ms-input-placeholder {
+  font-style: italic;
+  color: rgb(204, 204, 204);
+  font-weight: 300;
+}
+
+.form__input::-ms-input-placeholder {
+  font-style: italic;
+  color: rgb(204, 204, 204);
+  font-weight: 300;
+}
+
 .form__input::placeholder {
   font-style: italic;
   color: rgb(204, 204, 204);
@@ -515,8 +621,20 @@
   padding: 12px 32px;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+  (-o-min-device-pixel-ratio: 2/1),
+  (min-resolution: 192dpi) {
   .header__background {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(252, 227, 138, 0.9)),
+        to(rgba(243, 129, 129, 0.9))
+      ),
+      url("../img/vulture@2x.jpg");
+    background: -o-linear-gradient(rgba(252, 227, 138, 0.9), rgba(243, 129, 129, 0.9)),
+      url("../img/vulture@2x.jpg");
     background: linear-gradient(rgba(252, 227, 138, 0.9), rgba(243, 129, 129, 0.9)),
       url("../img/vulture@2x.jpg");
   }
