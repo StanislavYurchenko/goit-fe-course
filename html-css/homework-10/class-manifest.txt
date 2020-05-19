@@ -65,11 +65,12 @@ card
   card__socials
 
 socials
+  social__item
   social__link
-  social__img
+  social__icon
 
 footer
-
+footer__box
 copyright
   copyright__link
 
