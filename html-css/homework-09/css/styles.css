@@ -24,7 +24,8 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("../fonts/montserrat-v14-latin-700.woff2") format("woff2"),
+  src: local("Montserrat Bold"), local("Montserrat-Bold"),
+    url("../fonts/montserrat-v14-latin-700.woff2") format("woff2"),
     url("../fonts/montserrat-v14-latin-700.woff") format("woff");
 }
 
@@ -32,7 +33,8 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
-  src: local("Roboto Light"), local("Roboto-Light"), url("../fonts/roboto-v20-latin-300.woff2") format("woff2"),
+  src: local("Roboto Light"), local("Roboto-Light"),
+    url("../fonts/roboto-v20-latin-300.woff2") format("woff2"),
     url("../fonts/roboto-v20-latin-300.woff") format("woff");
 }
 
@@ -244,23 +246,29 @@ body {
     background-image: url(../img/background-md.png);
   }
 
-  .main-menu {
+  .main-menu--margin {
     margin-bottom: 32px;
   }
 
-  .main-menu__list {
+  .main-menu__list--margin {
     margin-bottom: 116px;
   }
 
   .main-menu__header {
     font-size: 2.1429rem;
+  }
+
+  .main-menu__header--margin {
     margin-bottom: 10px;
   }
 
   .main-menu__text {
     font-size: 1.2857rem;
-    margin-bottom: 16px;
     width: 80%;
+  }
+
+  .main-menu__text--margin {
+    margin-bottom: 16px;
   }
 
   .main-menu__search-link {
@@ -272,11 +280,11 @@ body {
     padding: 64px 0 56px;
   }
 
-  .partners__header {
+  .partners__header--margin {
     margin-bottom: 6px;
   }
 
-  .partners__list {
+  .partners__list--margin {
     margin-bottom: 18px;
   }
 
@@ -297,7 +305,7 @@ body {
     background-image: url(../img/background-lg.png);
   }
 
-  .main-menu {
+  .main-menu--margin {
     margin-bottom: 140px;
   }
 
@@ -307,11 +315,18 @@ body {
 
   .main-menu__header {
     font-size: 3.7143rem;
+  }
+
+  .main-menu__header--margin {
     margin-bottom: 30px;
   }
 
   .main-menu__text {
     font-size: 1.7143rem;
+    margin-bottom: 35px;
+  }
+
+  .main-menu__text--margin {
     margin-bottom: 35px;
   }
 
@@ -321,11 +336,11 @@ body {
     padding-right: 20px;
   }
 
-  .partners__header {
+  .partners__header--margin {
     margin-bottom: 22px;
   }
 
-  .partners__list {
+  .partners__list--margin {
     margin-bottom: 42px;
   }
 
@@ -365,7 +380,7 @@ body {
     padding-bottom: 232px;
   }
 
-  .main-menu {
+  .main-menu--margin {
     margin-bottom: 120px;
   }
 
@@ -373,11 +388,11 @@ body {
     padding: 68px 0 68px;
   }
 
-  .partners__header {
+  .partners__header--margin {
     margin-bottom: 22px;
   }
 
-  .partners__list {
+  .partners__list--margin {
     margin-bottom: 26px;
   }
 }
