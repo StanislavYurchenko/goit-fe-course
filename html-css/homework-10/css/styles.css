@@ -65,7 +65,9 @@
   box-sizing: border-box;
 }
 
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visualy-hiden,
+input[type="radio"].visualy-hiden {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -74,8 +76,8 @@
   border: 0;
   padding: 0;
   clip: rect(0, 0, 0, 0);
-  -webkit-clip-path: inset(50%);
-  clip-path: inset(50%);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
   margin: -1px;
 }
 
