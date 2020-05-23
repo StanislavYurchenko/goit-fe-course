@@ -523,7 +523,7 @@ input[type="radio"].visualy-hiden {
 
 .card__position {
   font-size: 15px;
-  font-family: var(--cecond-font-family);
+  font-family: var(--second-font-family);
   color: rgb(153, 153, 153);
   font-style: italic;
   line-height: 1.6;

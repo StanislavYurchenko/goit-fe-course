@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 150px;
+  font-family: $first-font-family;
+}
+
+.site-logo:hover .nav--hover,
+.site-nav__item:hover .nav--hover,
+.site-nav__item:focus .nav--hover {
+  color: rgb(252, 227, 138);
+}

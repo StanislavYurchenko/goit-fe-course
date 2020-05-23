@@ -1,0 +1,41 @@
+.social {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: rgb(243, 129, 129);
+  opacity: 0;
+  transition: all 0.2s linear;
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(252, 227, 138);
+    transition: all 0.2s linear;
+  }
+  &__icon {
+    width: 32px;
+    height: 32px;
+    fill: rgb(243, 129, 129);
+    transition: all 0.2s linear;
+  }
+  &__item:not(:last-child) {
+    margin-right: 1px;
+  }
+}
+
+.card:hover .social {
+  opacity: 0.9;
+}
+
+.social__item:hover .social__icon {
+  fill: rgb(255, 255, 255);
+}
+
+.social__item:hover .social__link {
+  background-color: rgb(243, 129, 129);
+}

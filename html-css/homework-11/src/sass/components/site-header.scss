@@ -1,0 +1,28 @@
+.site-header__subtitle {
+  display: block;
+  margin-bottom: 36px;
+  font-size: 72px;
+}
+
+.site-header__title {
+  font-size: 150px;
+  line-height: 1;
+  color: rgb(255, 255, 255);
+  margin: 0 0 92px;
+}
+
+.site-header__button {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border: 3px solid rgb(255, 255, 255);
+  line-height: 1;
+  padding: 10px 28px;
+  background: transparent;
+  transition: all 0.2s linear;
+}
+
+.site-header__button--hover:hover,
+.site-header__button--hover:focus {
+  color: rgb(243, 129, 129);
+  border: 3px solid rgb(243, 129, 129);
+}
