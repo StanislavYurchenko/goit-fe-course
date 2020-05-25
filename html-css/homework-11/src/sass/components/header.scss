@@ -1,26 +1,23 @@
 .header {
   padding: 22px 0 230px;
   font-family: $first-font-family;
-  color: rgb(255, 255, 255);
-  &__background {
-    background: linear-gradient(
-        0deg,
-        rgba(252, 227, 138, 0.9) 0%,
-        rgba(243, 129, 129, 0.9) 100%
-      ),
-      url('../images/background/vulture.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-}
+  color: $header-font-color;
 
-@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .header__background {
-    background: linear-gradient(
-        rgba(252, 227, 138, 0.9),
-        rgba(243, 129, 129, 0.9)
+  &__background {
+    @include bg-gradient-image(
+      linear-gradient(
+        rgba($first-accent-color, 0.9),
+        rgba($second-accent-color, 0.9)
       ),
-      url('../images/background/vulture@2x.jpg');
+      '../images/background/vulture.jpg'
+    );
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background: linear-gradient(
+          rgba($first-accent-color, 0.9),
+          rgba($second-accent-color, 0.9)
+        ),
+        url('../images/background/vulture@2x.jpg');
+    }
   }
 }

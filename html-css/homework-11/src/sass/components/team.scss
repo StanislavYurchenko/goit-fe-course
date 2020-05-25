@@ -1,4 +1,15 @@
-.team__list {
-  display: flex;
-  justify-content: space-between;
+.team {
+  &__list {
+    @extend %list;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__subtitle {
+    @extend %subtitle;
+  }
+
+  &__title {
+    @extend %title;
+  }
 }

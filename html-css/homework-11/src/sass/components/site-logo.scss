@@ -2,10 +2,9 @@
   margin-right: auto;
   &__link {
     font-size: 30px;
-    font-family: inherit;
     color: inherit;
     font-weight: bold;
-    line-height: 1.2;
     transition: all 0.2s linear;
+    @extend %link;
   }
 }

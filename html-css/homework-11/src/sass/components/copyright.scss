@@ -1,9 +1,10 @@
 .copyright {
   font-size: 14px;
   font-family: $first-font-family;
-  color: rgb(51, 51, 51);
+  color: $first-font-color;
   line-height: 1.2;
   &__link {
-    color: #f38181;
+    @extend %link;
+    color: $first-accent-color;
   }
 }

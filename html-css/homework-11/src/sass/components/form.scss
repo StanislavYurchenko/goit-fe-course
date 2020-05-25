@@ -1,38 +1,39 @@
 .form {
   display: flex;
-  border: 1px solid rgb(229, 229, 229);
+  border: 1px solid $foter-border-color;
 
   &__input {
-    border: 1px solid rgb(229, 229, 229);
+    border: 1px solid $foter-border-color;
     width: 228px;
     padding-left: 14px;
     font-size: 15px;
     font-family: $second-font-family;
-    color: rgb(51, 51, 51);
+    color: $first-font-color;
   }
 
   &__input:required:invalid:focus:not(:placeholder-shown) {
-    outline: 1px solid rgb(243, 129, 129);
+    outline: 1px solid $first-accent-color;
   }
 
   &__input:required:valid:focus:not(:placeholder-shown) {
-    outline: 1px solid rgb(149, 225, 211);
+    outline: 1px solid $main-color;
   }
 
   &__input::placeholder {
     font-style: italic;
-    color: rgb(204, 204, 204);
+    color: $placeholder-font-color;
     font-weight: 300;
   }
 
   &__btn {
+    @extend %button;
     font-size: 14px;
     font-family: $first-font-family;
-    color: rgb(255, 255, 255);
+    color: $header-font-color;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
-    background-color: rgb(149, 225, 211);
+    background-color: $main-color;
     border: none;
     padding: 12px 32px;
   }

@@ -1,0 +1,38 @@
+%icon {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+%link {
+  text-decoration: none;
+}
+
+%center {
+  text-align: center;
+}
+
+%list {
+  display: block;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+%button {
+  font-family: $first-font-family;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+%title {
+  font-family: $first-font-family;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+%subtitle {
+  font-family: $third-font-family;
+}

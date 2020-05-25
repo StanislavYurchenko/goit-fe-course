@@ -9,7 +9,7 @@ html {
 }
 
 * {
-  outline: 1px solid blue;
+  // outline: 1px solid blue;
 }
 
 .visually-hidden:not(:focus):not(:active),
@@ -25,4 +25,24 @@ input[type='radio'].visualy-hiden {
   clip: rect(0, 0, 0, 0);
   clip-path: inset(100%);
   margin: -1px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.br {
+  display: block;
+  line-height: inherit;
+}
+
+.center {
+  text-align: center;
+}
+
+.wraper {
+  width: 1200px;
+  margin: 0 auto;
 }
