@@ -17,7 +17,9 @@
 const buttonTask05Ref = document.querySelector('#task-05-do');
 
 buttonTask05Ref.addEventListener('click', () => {
-  const country = prompt('Choose your contry');
+  const country = prompt(
+    'Available contry: China, Chile, Australia, India, Jamaica.\nType your contry',
+  );
 
   if (country !== null) {
     let price;
