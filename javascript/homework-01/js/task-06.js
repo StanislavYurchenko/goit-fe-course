@@ -8,29 +8,32 @@
 // некорректного ввода, показывай alert с текстом 'Было введено не число, попробуйте еще раз',
 // при этом результат prompt плюсовать к общей сумме не нужно, после чего снова пользователю предлагается ввести число в prompt.
 
-let total = 0;
-let input = 0;
+const buttonTask06Ref = document.querySelector('#task-06-do');
 
-do {
-  input = prompt('Enter nomber [0-9]...');
+buttonTask06Ref.addEventListener('click', () => {
+  let total = 0;
+  let input = 0;
 
-  // input = Number.parseInt(input);
-  // console.log(`Your entered ${input}`);
+  do {
+    input = prompt('Enter nomber [0-9]...');
 
-  if (input !== null) {
-    console.log(`Your entered ${input}`);
-    input = Number.parseInt(input);
+    if (input !== null) {
+      console.log(`Your entered ${input}`);
+      input = Number.parseInt(input);
 
-    if (Number.isNaN(input)) {
-      console.log('Input error, try entering the number again');
-      continue;
+      if (Number.isNaN(input)) {
+        console.log('Input error, try entering the number again');
+        continue;
+      }
+
+      total = total + input;
+
+      console.log(`Sum of all numbers is ${total}`);
+    } else {
+      console.log(`Total sum of all numbers is ${total}`);
+      break;
     }
+  } while (true);
 
-    total = total + input;
-
-    console.log(`Sum of all numbers is ${total}`);
-  } else {
-    console.log(`Total sum of all numbers is ${total}`);
-    break;
-  }
-} while (true);
+  console.log('\n');
+});

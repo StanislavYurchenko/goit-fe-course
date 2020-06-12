@@ -1,0 +1,32 @@
+body {
+  padding: 10px;
+  counter-reset: task-number;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+}
+.nav-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.task {
+  min-height: 100px;
+  padding: 5px;
+  background-color: lemonchiffon;
+}
+
+.task:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.task__header:after {
+  counter-increment: task-number;
+  content: ' ' counter(task-number) '. ';
+}
+
+.task-do {
+  padding: 5px 20px;
+  cursor: pointer;
+}

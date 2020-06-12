@@ -6,12 +6,16 @@
 // Присвой товару новую цену - 2000
 // Используя шаблонную строку выведи в консоль информацию о товаре, получится: 'Выбран «Генератор защитного поля», цена за штуку 2000 кредитов'.
 
-const name = 'Shield generator';
+const buttonTask01Ref = document.querySelector('#task-01-do');
 
-let price = 1000;
-console.log(`Selected "${name}", unit price ${price} credits`);
+buttonTask01Ref.addEventListener('click', () => {
+  const name = 'Shield generator';
 
-price = 2000;
-console.log(`Selected "${name}", unit price ${price} credits`);
+  let price = 1000;
+  console.log(`Selected "${name}", unit price ${price} credits`);
 
-console.log('\n');
+  price = 2000;
+  console.log(`Selected "${name}", unit price ${price} credits`);
+
+  console.log('\n');
+});

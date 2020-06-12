@@ -1,31 +1,41 @@
 // Напиши скрипт имитирующий авторизацию администратора в панели управления.
 
-// Есть переменная message в которую будет записано сообщение о результате.При загрузке страницы у посетителя запрашивается пароль через prompt:
+// Есть переменная message в которую будет записано сообщение о результате.
+// При загрузке страницы у посетителя запрашивается пароль через prompt:
 
 // Если нажали Cancel, записать в message строку 'Отменено пользователем!'
-// В протовном случае, если введен пароль который совпадает со значением константы ADMIN_PASSWORD, записать в message строку 'Добро пожаловать!'
-// В противном случае, то есть если ни одно из предыдущих условий не выполнилось, записать в message строку 'Доступ запрещен, неверный пароль!'
+// В протовном случае, если введен пароль который совпадает со значением
+// константы ADMIN_PASSWORD, записать в message строку 'Добро пожаловать!'
+// В противном случае, то есть если ни одно из предыдущих условий не выполнилось,
+// записать в message строку 'Доступ запрещен, неверный пароль!'
 // После всех проверок вывести в alert значение переменной message.
+// const ADMIN_PASSWORD = 'jqueryismyjam';
+// let message;
 
-const ADMIN_PASSWORD = 'qwe';
+const buttonTask03Ref = document.querySelector('#task-03-do');
 
-let message;
+buttonTask03Ref.addEventListener('click', () => {
+  const ADMIN_PASSWORD = 'qwe';
 
-do {
-  message = prompt('Enter password (qwe)');
-  if (message !== null) {
-    if (message === ADMIN_PASSWORD) {
-      message = 'Welcome!';
-      break;
+  let message;
+
+  do {
+    message = prompt('Enter password (qwe)');
+    if (message !== null) {
+      if (message === ADMIN_PASSWORD) {
+        message = 'Welcome!';
+        break;
+      } else {
+        message = "Password isn't correct. Try again!";
+        console.log(message);
+        continue;
+      }
     } else {
-      message = "Password isn't correct. Try again!";
-      console.log(message);
-      continue;
+      message = 'canceled by user';
+      break;
     }
-  } else {
-    message = 'canceled by user';
-    break;
-  }
-} while (true);
+  } while (true);
 
-console.log(message);
+  console.log(message);
+  console.log('\n');
+});
