@@ -24,15 +24,15 @@ buttonTask04Ref.addEventListener('click', () => {
 
     if (quantity !== null) {
       if (!Number.isInteger(quantity)) {
-        quantity = Number.parseInt(quantity);
-
+        quantity = Number(quantity);
         if (Number.isNaN(quantity)) {
           console.log('You entered a wrong value. Try again');
           continue;
         }
-
+        quantity = Number.parseInt(quantity);
         totalPrice = quantity * pricePerDroid;
       }
+
       if (totalPrice > credits) {
         console.log(
           `Not enough money in your account. You need ${totalPrice} credits. You have ${credits} credits.`,

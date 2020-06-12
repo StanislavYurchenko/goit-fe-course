@@ -19,12 +19,13 @@ buttonTask06Ref.addEventListener('click', () => {
 
     if (input !== null) {
       console.log(`Your entered ${input}`);
-      input = Number.parseInt(input);
 
+      input = Number(input);
       if (Number.isNaN(input)) {
         console.log('Input error, try entering the number again');
         continue;
       }
+      input = Number.parseInt(input);
 
       total = total + input;
 
