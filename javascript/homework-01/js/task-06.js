@@ -17,7 +17,7 @@ buttonTask06Ref.addEventListener('click', () => {
   let message;
 
   do {
-    message = 'Enter nomber [0-9]...';
+    message = 'Enter number [0-9]...';
     input = prompt(message);
 
     if (input !== null) {
