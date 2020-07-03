@@ -13,25 +13,32 @@ const buttonTask06Ref = document.querySelector('#task-06-do');
 buttonTask06Ref.addEventListener('click', () => {
   let total = 0;
   let input = 0;
+  let message;
 
   do {
-    input = prompt('Enter nomber [0-9]...');
+    message = 'Enter nomber [0-9]...';
+    input = prompt(message);
 
     if (input !== null) {
-      console.log(`Your entered ${input}`);
-
+      message = `Your entered ${input}`;
+      console.log(message);
       input = Number(input);
-      if (Number.isNaN(input)) {
-        console.log('Input error, try entering the number again');
+
+      if (Number.isNaN(input) || input == '') {
+        message = 'Input error, try entering the number again';
+        console.log(message);
         continue;
       }
       input = Number.parseInt(input);
 
       total = total + input;
 
-      console.log(`Sum of all numbers is ${total}`);
+      message = `Sum of all numbers is ${total}`;
+      console.log(message);
     } else {
-      console.log(`Total sum of all numbers is ${total}`);
+      message = `Total sum of all numbers is ${total}`;
+      console.log(message);
+      alert(message);
       break;
     }
   } while (true);

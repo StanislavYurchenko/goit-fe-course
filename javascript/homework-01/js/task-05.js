@@ -8,7 +8,7 @@
 
 // Ниже приведен список стран и стоимость доставки.
 
-//   Китай - 100 кредитов
+// Китай - 100 кредитов
 // Чили - 250 кредитов
 // Австралия - 170 кредитов
 // Индия - 80 кредитов
@@ -20,37 +20,54 @@ buttonTask05Ref.addEventListener('click', () => {
   const country = prompt(
     'Available contry: China, Chile, Australia, India, Jamaica.\nType your contry',
   );
+  let message;
 
   if (country !== null) {
     let price;
 
     switch (country.toLowerCase()) {
       case 'china':
+      case 'китай':
         price = 100;
         break;
+
       case 'chile':
+      case 'чили':
         price = 250;
         break;
+
       case 'australia':
+      case 'австралия':
         price = 170;
         break;
+
       case 'india':
+      case 'индия':
         price = 80;
         break;
+
       case 'jamaica':
+      case 'ямайка':
         price = 120;
         break;
+
       default:
         price = 0;
     }
 
     if (price !== 0) {
-      console.log(` Delivery to ${country} will coast ${price}$`);
+      message = `Delivery to ${country} will coast ${price}$`;
+      console.log(message);
+      alert(message);
     } else {
-      console.log(`Delivery isn't posible to ${country}`);
+      message = `Delivery isn't posible to ${country}`;
+      console.log(message);
+      alert(message);
     }
   } else {
-    console.log('canceled by user');
+    message = 'canceled by user';
+    console.log(message);
+    alert(message);
   }
 
   console.log('\n');

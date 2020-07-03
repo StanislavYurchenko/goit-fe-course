@@ -15,12 +15,12 @@
 const buttonTask03Ref = document.querySelector('#task-03-do');
 
 buttonTask03Ref.addEventListener('click', () => {
-  const ADMIN_PASSWORD = 'qwe';
+  const ADMIN_PASSWORD = 'jqueryismyjam';
 
   let message;
 
   do {
-    message = prompt('Enter password (qwe)');
+    message = prompt('Enter password (jqueryismyjam)');
     if (message !== null) {
       if (message === ADMIN_PASSWORD) {
         message = 'Welcome!';
@@ -28,14 +28,16 @@ buttonTask03Ref.addEventListener('click', () => {
       } else {
         message = "Password isn't correct. Try again!";
         console.log(message);
+        alert(message);
         continue;
       }
     } else {
-      message = 'canceled by user';
+      message = 'Canceled by user';
       break;
     }
   } while (true);
 
   console.log(message);
+  alert(message);
   console.log('\n');
 });
