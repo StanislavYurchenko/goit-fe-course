@@ -37,7 +37,7 @@ buttonTask04Ref.addEventListener('click', () => {
       }
 
       if (totalPrice > credits) {
-        message = `Not enough money in your account. You need ${totalPrice} credits. You have ${credits} credits.`;
+        message = `Not enough credits in your account. You need ${totalPrice} credits. You have ${credits} credits.`;
         console.log(message);
         continue;
       } else {
