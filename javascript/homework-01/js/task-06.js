@@ -8,6 +8,7 @@
 // некорректного ввода, показывай alert с текстом 'Было введено не число, попробуйте еще раз',
 // при этом результат prompt плюсовать к общей сумме не нужно, после чего снова пользователю предлагается ввести число в prompt.
 
+'use strict';
 const buttonTask06Ref = document.querySelector('#task-06-do');
 
 buttonTask06Ref.addEventListener('click', () => {

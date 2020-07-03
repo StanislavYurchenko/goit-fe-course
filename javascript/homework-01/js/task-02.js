@@ -6,6 +6,7 @@
 // В другом случае выводи сообщение "Заказ оформлен, с вами свяжется менеджер".
 // Проверь работоспособность кода с разными значениями переменной ordered, например 20, 80 и 130.
 
+'use strict';
 const buttonTask02Ref = document.querySelector('#task-02-do');
 
 buttonTask02Ref.addEventListener('click', () => {

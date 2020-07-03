@@ -14,6 +14,7 @@
 // Индия - 80 кредитов
 // Ямайка - 120 кредитов
 
+'use strict';
 const buttonTask05Ref = document.querySelector('#task-05-do');
 
 buttonTask05Ref.addEventListener('click', () => {

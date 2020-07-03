@@ -12,6 +12,7 @@
 // const ADMIN_PASSWORD = 'jqueryismyjam';
 // let message;
 
+'use strict';
 const buttonTask03Ref = document.querySelector('#task-03-do');
 
 buttonTask03Ref.addEventListener('click', () => {
