@@ -14,20 +14,19 @@ buttonTask02Ref.addEventListener('click', () => {
 
   let total = Number(inputTotalTask02Ref.value);
   const order = Number(inputOrderTask02Ref.value);
+  let message;
 
   if (order > total) {
-    console.log(
-      `Your order is(are) ${order} item(s). There are not enough goods in the stock! You can order not more then ${total} item(s)`,
-    );
+    message = `Your order is(are) ${order} item(s). There are not enough goods in the stock! You can order not more then ${total} item(s)`;
+    console.log(message);
   } else {
-    console.log(
-      `The order is(are) ${order} item(s), the manager will contact you`,
-    );
+    message = `The order is(are) ${order} item(s), the manager will contact you`;
+    console.log(message);
+
     total -= order;
-
     inputTotalTask02Ref.value = total;
-
-    console.log(`There is(are) ${total} item(s) in the stock`);
+    message = `There is(are) ${total} item(s) in the stock`;
+    console.log(message);
   }
   console.log('\n');
 });

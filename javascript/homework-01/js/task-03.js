@@ -20,7 +20,7 @@ buttonTask03Ref.addEventListener('click', () => {
   let message;
 
   do {
-    message = prompt('Enter password (jqueryismyjam)');
+    message = prompt('Enter password\n*password: jqueryismyjam');
     if (message !== null) {
       if (message === ADMIN_PASSWORD) {
         message = 'Welcome!';

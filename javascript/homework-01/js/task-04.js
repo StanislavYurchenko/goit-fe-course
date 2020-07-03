@@ -16,17 +16,19 @@ buttonTask04Ref.addEventListener('click', () => {
   let credits = 23580;
   const pricePerDroid = 3000;
   let totalPrice;
-
   let quantity;
+  let message;
 
   do {
-    quantity = prompt('How many do you want order repair droid?');
+    message = 'How many do you want order repair droid?';
+    quantity = prompt(message);
 
     if (quantity !== null) {
       if (!Number.isInteger(quantity)) {
         quantity = Number(quantity);
         if (Number.isNaN(quantity)) {
-          console.log('You entered a wrong value. Try again');
+          message = 'You entered a wrong value. Try again';
+          console.log('message');
           continue;
         }
         quantity = Number.parseInt(quantity);
@@ -34,20 +36,18 @@ buttonTask04Ref.addEventListener('click', () => {
       }
 
       if (totalPrice > credits) {
-        console.log(
-          `Not enough money in your account. You need ${totalPrice} credits. You have ${credits} credits.`,
-        );
+        message = `Not enough money in your account. You need ${totalPrice} credits. You have ${credits} credits.`;
+        console.log('message');
         continue;
       } else {
         credits = credits - totalPrice;
-
-        console.log(
-          `You bought ${quantity} repair(s) droid. Your balance ${credits} credits.`,
-        );
+        message = `You bought ${quantity} repair(s) droid. Your balance ${credits} credits.`;
+        console.log('message');
         break;
       }
     } else {
-      console.log('canceled by user');
+      message = 'canceled by user';
+      console.log('message');
       break;
     }
   } while (true);
