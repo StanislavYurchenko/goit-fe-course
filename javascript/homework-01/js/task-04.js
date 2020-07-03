@@ -29,7 +29,7 @@ buttonTask04Ref.addEventListener('click', () => {
         quantity = Number(quantity);
         if (Number.isNaN(quantity)) {
           message = 'You entered a wrong value. Try again';
-          console.log('message');
+          console.log(message);
           continue;
         }
         quantity = Number.parseInt(quantity);
@@ -38,17 +38,17 @@ buttonTask04Ref.addEventListener('click', () => {
 
       if (totalPrice > credits) {
         message = `Not enough money in your account. You need ${totalPrice} credits. You have ${credits} credits.`;
-        console.log('message');
+        console.log(message);
         continue;
       } else {
         credits = credits - totalPrice;
         message = `You bought ${quantity} repair(s) droid. Your balance ${credits} credits.`;
-        console.log('message');
+        console.log(message);
         break;
       }
     } else {
       message = 'canceled by user';
-      console.log('message');
+      console.log(message);
       break;
     }
   } while (true);
