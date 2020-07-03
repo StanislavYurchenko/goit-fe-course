@@ -32,7 +32,7 @@ buttonTask06Ref.addEventListener('click', () => {
       }
       input = Number.parseInt(input);
 
-      total = total + input;
+      total += input;
 
       message = `Sum of all numbers is ${total}`;
       console.log(message);
