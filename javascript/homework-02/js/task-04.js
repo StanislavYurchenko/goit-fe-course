@@ -1,8 +1,8 @@
 'use strict';
 
 const buttonRef = document.getElementById('task-04-do');
-const inputStringRef = document.querySelector('.homework-04__form .form__input--string');
-const inputNumberRef = document.querySelector('.homework-04__form .form__input--number');
+const inputStringRef = document.querySelector('.task-04__form .form__input--string');
+const inputNumberRef = document.querySelector('.task-04__form .form__input--number');
 
 const strings = [
   'Curabitur ligula sapien, tincidunt non.',

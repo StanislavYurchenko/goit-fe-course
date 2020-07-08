@@ -46,17 +46,14 @@
   content: ' ' counter(task-number) '. ';
 }
 
-.homework {
+.task {
   border: 2px solid black;
-  /* height: 500px; */
   padding: 15px;
 }
-.homework:not(:last-child) {
+.task:not(:last-child) {
   margin-bottom: 20px;
 }
 
-.homework__task {
-}
 .form {
   display: flex;
   flex-direction: column;
@@ -76,4 +73,7 @@
   padding: 0;
   display: flex;
   list-style: none;
+}
+.main-menu__item:not(:last-child) {
+  margin-right: 20px;
 }

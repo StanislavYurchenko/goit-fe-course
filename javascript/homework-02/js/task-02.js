@@ -1,8 +1,8 @@
 'use strict';
 
 const buttonRef = document.getElementById('task-02-do');
-const inputEngravingRef = document.querySelector('.homework-02__form .form__input--engraving');
-const inputPriseRef = document.querySelector('.homework-02__form .form__input--prise');
+const inputEngravingRef = document.querySelector('.task-02__form .form__input--engraving');
+const inputPriseRef = document.querySelector('.task-02__form .form__input--prise');
 
 const engraving1 = 'Proin sociis natoque et magnis parturient montes mus';
 const engraving2 = 'Donec orci lectus aliquam est magnis';

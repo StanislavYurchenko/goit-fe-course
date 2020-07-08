@@ -1,7 +1,7 @@
 'use strict';
 
 const buttonRef = document.getElementById('task-03-do');
-const inputStringRef = document.querySelector('.homework-03__form .form__input--string');
+const inputStringRef = document.querySelector('.task-03__form .form__input--string');
 
 const string1 = 'The quick brown fox jumped over the lazy dog';
 const string2 = 'Google do a roll';

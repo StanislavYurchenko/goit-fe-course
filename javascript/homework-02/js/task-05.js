@@ -1,7 +1,7 @@
 'use strict';
 
 const buttonRef = document.getElementById('task-05-do');
-const inputStringRef = document.querySelector('.homework-05__form .form__input--string');
+const inputStringRef = document.querySelector('.task-05__form .form__input--string');
 
 const messages = [
   'Latest technology news',

@@ -1,7 +1,7 @@
 'use strict';
 
 const buttonRef = document.getElementById('task-07-do');
-const inputStringRef = document.querySelector('.homework-07__form .form__input--string');
+const inputStringRef = document.querySelector('.task-07__form .form__input--string');
 
 const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
@@ -41,7 +41,7 @@ buttonRef.addEventListener('click', () => {
 
   if (isAddedLogin) {
     inputStringRef.value = '';
-    console.log(`List of logins: [${logins}].`);
+    console.log(`New list of logins: [${logins}].`);
   }
   console.log('\n');
 });
