@@ -7,13 +7,284 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="GoIT, JS, homework" />
     <meta name="description" content="homework HTML and CSS" />
+
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <body>
-    <header></header>
-    <main></main>
+  <body class="body">
+    <header class="main-menu">
+      <ul class="main-menu__list">
+        <li class="main-menu__item">JavaScript HW-1</li>
+        <li class="main-menu__item">JavaScript HW-2</li>
+        <li class="main-menu__item">JavaScript HW-3</li>
+        <li class="main-menu__item">JavaScript HW-4</li>
+        <li class="main-menu__item">JavaScript HW-5</li>
+        <li class="main-menu__item">JavaScript HW-6</li>
+        <li class="main-menu__item">JavaScript HW-7</li>
+      </ul>
+    </header>
+    <main class="main container">
+      <h1>Домашняя работа №2</h1>
+
+      <section class="homework homework-01">
+        <h2 class="title">Задание</h2>
+        <div class="homework__task">
+          <p>
+            Напиши функцию logItems(array), которая получает массив и использует цикл for, который
+            для каждого элемента массива будет выводить в консоль сообщение в формате [номер
+            элемента] - [значение элемента]. Нумерация должна начинаться с 1. К примеру для первого
+            элемента массива ['Mango', 'Poly', 'Ajax'] с индексом 0 будет выведено '1 - Mango', а
+            для индекса 2 выведет '3 - Ajax'.
+          </p>
+        </div>
+
+        <form class="homework-01__form form">
+          <button type="button" class="button" id="task-01-do">do</button>
+        </form>
+      </section>
+
+      <section class="homework homework-02">
+        <h2 class="title">Задание</h2>
+        <div class="homework__task">
+          <p>
+            Напиши скрипт подсчета стоимости гравировки украшений. Для этого создай функцию
+            calculateEngravingPrice(message, pricePerWord) принимающую строку (в строке будут только
+            слова и пробелы) и цену гравировки одного слова, и возвращающую цену гравировки всех
+            слов в строке.
+          </p>
+        </div>
+
+        <form class="homework-02__form form">
+          <input
+            type="text"
+            class="form__input form__input--engraving"
+            placeholder="Введите фразу для гравировки"
+          />
+          <input
+            type="text"
+            class="form__input form__input--prise"
+            value="10"
+            placeholder="*цена за одно слово"
+          />
+          <button type="button" class="form__button button" id="task-02-do">
+            do
+          </button>
+        </form>
+      </section>
+
+      <section class="homework homework-03">
+        <h2 class="title">Задание</h2>
+        <div class="homework__task">
+          <p>
+            Напиши фукцнию findLongestWord(string), которая принимает параметром произвольную строку
+            (в строке будут только слова и пробелы) и возвращает самое длинное слово в этой строке.
+          </p>
+        </div>
+        <form class="homework-03__form form">
+          <input
+            type="text"
+            class="form__input form__input--string"
+            placeholder="Введите фразу для поиска самого длинного слова"
+          />
+          <button type="button" class="form__button button" id="task-03-do">
+            do
+          </button>
+        </form>
+      </section>
+
+      <section class="homework homework-04">
+        <h2 class="title">Задание</h2>
+        <div class="homework__task">
+          <p>
+            Напиши функцию formatString(string) которая принимает строку и форматирует ее если
+            необходимо.
+          </p>
+          <ul>
+            <li>
+              Если длина строки не превышает 40 символов, функция возвращает ее в исходном виде.
+            </li>
+            <li>
+              Если длина больше 40 символов, то функция обрезает строку до 40-ка символов и
+              добавляет в конец строки троеточие '...', после чего возвращает укороченную версию.
+            </li>
+          </ul>
+        </div>
+
+        <form class="homework-04__form form">
+          <input
+            type="text"
+            class="form__input form__input--string"
+            placeholder="Введите строку для форматирования"
+          />
+          <input
+            type="text"
+            class="form__input form__input--number"
+            value="40"
+            placeholder="*кол-во символов"
+          />
+          <button type="button" class="form__button button" id="task-04-do">
+            do
+          </button>
+        </form>
+      </section>
+
+      <section class="homework homework-05">
+        <h2 class="title">Задание</h2>
+        <div class="homework__task">
+          <p>
+            Напиши функцию checkForSpam(message), принимающую 1 параметр message - строку. Функция
+            проверяет ее на содержание слов spam и sale. Если нашли зарещенное слово то функция
+            возвращает true, если запрещенных слов нет функция возвращает false. Слова в строке
+            могут быть в произвольном регистре.
+          </p>
+        </div>
+
+        <form class="homework-05__form form">
+          <input
+            type="text"
+            class="form__input form__input--string"
+            placeholder="Введите строку для поиска запрещенных слов"
+          />
+          <button type="button" class="form__button button" id="task-05-do">
+            do
+          </button>
+        </form>
+      </section>
+
+      <section class="homework homework-06">
+        <h2 class="title">Задание</h2>
+        <div class="homework__task">
+          <p>
+            Напиши скрипт со следующим функционалом:
+          </p>
+          <ul>
+            <li>
+              При загрузке страницы пользователю предлагается в prompt ввести число. Ввод
+              сохраняется в переменную input и добавляется в массив чисел numbers.
+            </li>
+            <li>
+              Операция ввода числа пользователем и сохранение в массив продолжается до тех пор, пока
+              пользователь не нажмет Cancel в prompt.
+            </li>
+            <li>
+              После того как пользователь прекратил ввод нажав Cancel, если массив не пустой,
+              необходимо посчитать сумму всех элементов массива и записать ее в переменную total.
+              Используй цикл for или for...of. После чего в консоль выведи строку 'Общая сумма чисел
+              равна [сумма]'.
+            </li>
+          </ul>
+          <p>
+            Делать проверку того, что пользователь ввел именно число, а не произвольный набор
+            символов, не обязательно. Если хочешь, в случае некорректного ввода, показывай alert с
+            текстом 'Было введено не число, попробуйте еще раз', при этом результат prompt
+            записывать в массив чисел не нужно, после чего снова пользователю предлагается ввести
+            число в prompt.
+          </p>
+        </div>
+
+        <form class="homework-06__form form">
+          <button type="button" class="form__button button" id="task-06-do">
+            do
+          </button>
+        </form>
+      </section>
+
+      <section class="homework homework-07">
+        <h2 class="title">Задание</h2>
+        <div class="homework__task">
+          <p>
+            Есть массив logins с логинами пользователей. Напиши скрипт добавления логина в массив
+            logins. Добавляемый логин должен:
+          </p>
+          <ul>
+            <li>
+              проходить проверку на длину от 4 до 16-ти символов включительно
+            </li>
+            <li>
+              быть уникален, то есть отсутствовать в массиве logins
+            </li>
+          </ul>
+          <p>
+            Разбей задачу на подзадачи с помощью функций.
+          </p>
+          <p>
+            Напиши функцию isLoginValid(login), в которой проверь количество символов параметра
+            login и верни true или false в зависимости от того, попадает ли длина параметра в
+            заданный диапазон от 4-х до 16-ти символов включительно.
+          </p>
+          <p>
+            Напиши функцию isLoginUnique(allLogins, login), которая принимает список всех логинов и
+            добавляемый логин как параметры и проверяет наличие login в массиве allLogins, возвращая
+            true если такого логина еще нет и false если логин уже используется.
+          </p>
+          <p>
+            Напиши функцию addLogin(allLogins, login) которая:
+          </p>
+          <ul>
+            <li>
+              Принимает новый логин и массив всех логинов как параметры
+            </li>
+            <li>
+              Проверяет валидность логина используя вспомогательную функцию isLoginValid
+            </li>
+            <li>
+              Если логин не валиден, прекратить исполнение функции addLogin и вернуть строку
+              'Ошибка! Логин должен быть от 4 до 16 символов'
+            </li>
+            <li>
+              Если логин валиден, функция addLogin проверяеть уникальность логина с помощью функции
+              isLoginUnique
+            </li>
+            <li>
+              Если isLoginUnique вернет false, тогда addLogin не добавляет логин в массив и
+              возвращает строку 'Такой логин уже используется!'
+            </li>
+            <li>
+              Если isLoginUnique вернет true, addLogin добавляет новый логин в logins и возвращает
+              строку 'Логин успешно добавлен!'
+            </li>
+          </ul>
+          <p>
+            Принцип единственной ответственности функции - каждая функция делает что-то одно. Это
+            позволяет переиспользовать код и изменять логику работы функции только в одном месте, не
+            затрагивая работу программы в целом.
+          </p>
+          <p>
+            Предикатные функции возвращают только true или false. Такие функции принято называть
+            начиная с is: isLoginUnique и isLoginValid в нашем случае.
+          </p>
+          <ul>
+            <li>
+              isLoginUnique только проверяет есть ли такой логин в массиве и возвращает true или
+              false.
+            </li>
+            <li>
+              isLoginValid только проверяет валидный ли логин и возвращает true или false.
+            </li>
+            <li>
+              addLogin добавляет или не добавляет логин в массив. При этом для проверок условия
+              добавления использует результаты вызовов других функций - isLoginUnique и
+              isLoginValid.
+            </li>
+          </ul>
+        </div>
+
+        <form class="homework-07__form form">
+          <input type="text" class="form__input form__input--string" placeholder="Введите логин" />
+          <button type="button" class="form__button button" id="task-07-do">
+            do
+          </button>
+        </form>
+      </section>
+    </main>
     <footer></footer>
     <script src="./js/task-01.js" type="module"></script>
+    <script src="./js/task-02.js" type="module"></script>
+    <script src="./js/task-03.js" type="module"></script>
+    <script src="./js/task-04.js" type="module"></script>
+    <script src="./js/task-05.js" type="module"></script>
+    <script src="./js/task-06.js" type="module"></script>
+    <script src="./js/task-07.js" type="module"></script>
   </body>
 </html>

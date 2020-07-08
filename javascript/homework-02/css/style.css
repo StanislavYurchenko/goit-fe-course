@@ -1,0 +1,79 @@
+:root {
+  --sliders: 7;
+}
+
+.container {
+  max-width: 900px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+* {
+  /* outline: 1px solid blue; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.body {
+  padding: 10px;
+}
+.main {
+  counter-reset: task-number;
+}
+.title:after {
+  counter-increment: task-number;
+  content: ' ' counter(task-number) '. ';
+}
+
+.homework {
+  border: 2px solid black;
+  /* height: 500px; */
+  padding: 15px;
+}
+.homework:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.homework__task {
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form__input {
+  margin-bottom: 10px;
+}
+.button {
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.main-menu__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
