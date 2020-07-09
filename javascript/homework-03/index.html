@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homework JS 02</title>
+    <meta name="author" content="Stas Yurchenko" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="GoIT, JS, task " />
+    <meta name="description" content="task  HTML and CSS" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="body">
+    <header class="main-menu container">
+      <ul class="main-menu__list">
+        <li class="main-menu__item"><a href="#task-1">Task-1</a></li>
+        <li class="main-menu__item"><a href="#task-2">Task-2</a></li>
+        <li class="main-menu__item"><a href="#task-3">Task-3</a></li>
+        <li class="main-menu__item"><a href="#task-4">Task-4</a></li>
+        <li class="main-menu__item"><a href="#task-5">Task-5</a></li>
+        <li class="main-menu__item"><a href="#task-6">Task-6</a></li>
+        <li class="main-menu__item"><a href="#task-7">Task-7</a></li>
+      </ul>
+    </header>
+    <main class="main container">
+      <h1>Домашняя работа №2</h1>
+      <div class="slider">
+        <section class="task task-01 slide" id="slide-0">
+          <div class="slide__box">
+            <h2 class="title">Задание 1</h2>
+            <div class="task__desc">
+              <p>
+                текст затания
+              </p>
+            </div>
+
+            <form class="task-01__form form">
+              <button type="button" class="button" id="task-01-do">do</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="task task-02 slide slide--small" id="slide-1">
+          <div class="slide__box display-none">
+            <h2 class="title">Задание 2</h2>
+            <div class="task__desc">
+              <p>
+                текст затания
+              </p>
+            </div>
+
+            <form class="task-02__form form">
+              <input
+                type="text"
+                class="form__input form__input--engraving"
+                placeholder="Введите фразу для гравировки"
+              />
+              <input
+                type="text"
+                class="form__input form__input--prise"
+                value="10"
+                placeholder="*цена за одно слово"
+              />
+              <button type="button" class="form__button button" id="task-02-do">
+                do
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section class="task task-03 slide slide--small" id="slide-2">
+          <div class="slide__box display-none">
+            <h2 class="title">Задание 3</h2>
+            <div class="task__desc">
+              <p>
+                текст затания
+              </p>
+            </div>
+            <form class="task-03__form form">
+              <input
+                type="text"
+                class="form__input form__input--string"
+                placeholder="Введите фразу для поиска самого длинного слова"
+              />
+              <button type="button" class="form__button button" id="task-03-do">
+                do
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section class="task task-04 slide slide--small" id="slide-3">
+          <div class="slide__box display-none">
+            <h2 class="title">Задание 4</h2>
+            <div class="task__desc">
+              <p>
+                текст затания
+              </p>
+            </div>
+
+            <form class="task-04__form form">
+              <input
+                type="text"
+                class="form__input form__input--string"
+                placeholder="Введите строку для форматирования"
+              />
+              <input
+                type="text"
+                class="form__input form__input--number"
+                value="40"
+                placeholder="*кол-во символов"
+              />
+              <button type="button" class="form__button button" id="task-04-do">
+                do
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section class="task task-05 slide slide--small" id="slide-4">
+          <div class="slide__box display-none">
+            <h2 class="title">Задание 5</h2>
+            <div class="task__desc">
+              <p>
+                текст затания
+              </p>
+            </div>
+
+            <form class="task-05__form form">
+              <input
+                type="text"
+                class="form__input form__input--string"
+                placeholder="Введите строку для поиска запрещенных слов"
+              />
+              <button type="button" class="form__button button" id="task-05-do">
+                do
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section class="task task-06 slide slide--small" id="slide-5">
+          <div class="slide__box display-none">
+            <h2 class="title">Задание 6</h2>
+            <div class="task__desc">
+              <p>
+                текст затания
+              </p>
+            </div>
+
+            <form class="task-06__form form">
+              <button type="button" class="form__button button" id="task-06-do">
+                do
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section class="task task-07 slide slide--small" id="slide-6">
+          <div class="slide__box display-none">
+            <h2 class="title">Задание 7</h2>
+            <div class="task__desc">
+              <p>
+                текст затания
+              </p>
+            </div>
+
+            <form class="task-07__form form">
+              <input
+                type="text"
+                class="form__input form__input--string"
+                placeholder="Введите логин"
+              />
+              <button type="button" class="form__button button" id="task-07-do">
+                do
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <div class="slider__nav">
+        <button class="slider__btn slider__btn--prev button">prev</button>
+        <button class="slider__btn slider__btn--next button">next</button>
+      </div>
+    </main>
+
+    <footer></footer>
+
+    <script src="./js/task-01.js" type="module"></script>
+    <script src="./js/task-02.js" type="module"></script>
+    <script src="./js/task-03.js" type="module"></script>
+    <script src="./js/task-04.js" type="module"></script>
+    <script src="./js/task-05.js" type="module"></script>
+    <script src="./js/task-06.js" type="module"></script>
+    <script src="./js/task-07.js" type="module"></script>
+
+    <script src="./js/slider.js" type="module"></script>
+  </body>
+</html>
