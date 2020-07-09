@@ -60,15 +60,6 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.main-menu__list {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  list-style: none;
-}
-.main-menu__item:not(:last-child) {
-  margin-right: 20px;
-}
 
 /* SLIDER */
 .slider {
@@ -83,7 +74,6 @@
   flex-basis: 90%;
   flex-grow: 1;
   height: 100%;
-  transition: flex-basis 1s ease-out;
   transition: all 0.5s ease-out;
 }
 
