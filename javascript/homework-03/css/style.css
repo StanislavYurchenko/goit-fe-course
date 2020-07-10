@@ -1,6 +1,6 @@
 .container {
   max-width: 900px;
-  min-width: 300px;
+  min-width: 400px;
   margin: 0 auto;
 }
 
@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 
-/* .visually-hidden {
+.visually-hidden {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -29,31 +29,26 @@
   clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
   margin: -1px;
-} */
+}
 
 .body {
   padding: 10px;
   font-family: 'Roboto', sans-serif;
+  color: rgb(144, 0, 0);
   font-size: 16px;
   letter-spacing: 0.01rem;
 }
+
 .main {
 }
 
 .task {
-  border: 2px solid black;
+  border-radius: 5px;
   padding: 25px;
 }
 
 .title {
   margin: 0 0 15px;
-}
-
-.slide__box {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  height: 100%;
 }
 
 .form {
@@ -65,32 +60,69 @@
 
 .form__input {
   margin-bottom: 10px;
+  width: 100%;
+  background-color: hsl(39, 36%, 91%);
+  border: 2px solid rgb(144, 0, 0);
+  color: rgb(144, 0, 0);
+  border-radius: 5px;
 }
 .button {
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
+  background-color: wheat;
+  border: 2px solid rgb(144, 0, 0);
+  color: rgb(144, 0, 0);
+  transition: all 0.5s ease-out;
 }
+
+.button:hover {
+  background-color: rgb(144, 0, 0);
+  color: wheat;
+}
+
 .code {
   font-family: 'Space Mono', monospace;
   font-size: 14px;
 }
 
 /* SLIDER */
+.slider-container {
+  border: 2px solid rgb(238, 221, 221);
+  border-radius: 5px;
+  padding: 5px;
+  background-color: cornsilk;
+}
+
 .slider {
+  counter-reset: task-number;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  height: 400px;
+  height: 500px;
   position: relative;
+  margin-bottom: 10px;
+}
+
+.slide__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 100%;
 }
 
 .slide {
-  flex-basis: 90%;
+  overflow: hidden;
+  flex-basis: 70%;
   flex-grow: 1;
+  flex-shrink: 0;
   height: 100%;
   transition: all 0.5s ease-out;
+  background-color: wheat;
+  border: 2px solid rgb(144, 0, 0);
+  counter-increment: task-number;
+  /* order: 0; */
 }
 
 .slide:not(:last-child) {
@@ -102,19 +134,31 @@
   height: 20px;
   cursor: pointer;
   flex-grow: 0;
-  flex-basis: 1%;
-  font-size: 0;
-  opacity: 0.2;
+  flex-basis: 3%;
+  font-size: 10px;
+  color: brown;
+  opacity: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* order: 1; */
+}
+
+.slide--small:hover {
+  background-color: rgb(144, 0, 0);
+  color: wheat;
+}
+
+.slide--small:after {
+  content: counter(task-number);
 }
 
 .slider__nav {
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  transform: translateY(120%);
+}
+
+.slider__btn {
 }
 
 .display-none {
