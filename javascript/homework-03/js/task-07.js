@@ -27,7 +27,7 @@ const account = {
   createTransaction(amount, type) {
     const id = this.transactions.length + 1;
     const transactionObj = { id, type, amount };
-    // this.transactions.push(transactionObj);
+    this.transactions.push(transactionObj);
     return transactionObj;
   },
 
@@ -75,31 +75,47 @@ const account = {
   /*
    * Метод ищет и возвращает объект транзации по id
    */
-  getTransactionDetails(id) {},
+  getTransactionDetails(id) {
+    for (let i = 0; i < this.transactions.length; i += 1) {
+      if (this.transactions[i].id === id) {
+        return this.transactions[i];
+      }
+    }
+    return `There is no ID:"${id}"`;
+  },
 
   /*
    * Метод возвращает количество средств
    * определенного типа транзакции из всей истории транзакций
    */
-  getTransactionTotal(type) {},
+  getTransactionTotal(type) {
+    let total = 0;
+    for (let i = 0; i < this.transactions.length; i += 1) {
+      if (this.transactions[i].type === type) {
+        total += +this.transactions[i].amount;
+      }
+    }
+    return total;
+  },
 };
 
-const buttonDepositRef = document.getElementById('task-07-deposit');
-const buttonBalanceRef = document.getElementById('task-07-balance');
-const buttonWithdrawRef = document.getElementById('task-07-withdraw');
-const buttonTransactionIdRef = document.getElementById('task-07-transaction-id');
-const buttonTransactionTypeRef = document.getElementById('task-07-transaction-type');
+const btnDepositRef = document.getElementById('task-07-deposit');
+const btnBalanceRef = document.getElementById('task-07-balance');
+const btnWithdrawRef = document.getElementById('task-07-withdraw');
+const btnTransactionIdRef = document.getElementById('task-07-transaction-id');
+const btnTransactionTypeDepositRef = document.getElementById('task-07-transaction-type-deposit');
+const btnTransactionTypeWithdrawRef = document.getElementById('task-07-transaction-type-withdraw');
 
-buttonBalanceRef.addEventListener('click', () => {
+btnBalanceRef.addEventListener('click', () => {
   console.log(account.getBalance());
   console.log('\n');
 });
 
-buttonDepositRef.addEventListener('click', () => {
+btnDepositRef.addEventListener('click', () => {
   let getAmount = prompt('how many credits do you want to put into your account?');
 
   if (getAmount !== null) {
-    if (Number.isNaN(+getAmount)) {
+    if (Number.isNaN(+getAmount) || +getAmount <= 0) {
       console.log('Enter the number [0...9]! Try again!');
     } else {
       console.log(account.deposit(getAmount));
@@ -111,28 +127,47 @@ buttonDepositRef.addEventListener('click', () => {
   console.log('\n');
 });
 
-buttonWithdrawRef.addEventListener('click', () => {
+btnWithdrawRef.addEventListener('click', () => {
   let getAmount = prompt('how many credits do you want to put into your account?');
 
   if (getAmount !== null) {
-    if (Number.isNaN(+getAmount)) {
+    if (Number.isNaN(+getAmount) || +getAmount <= 0) {
       console.log('Enter the number [0...9]! Try again!');
     } else {
       console.log(account.withdraw(getAmount));
     }
   } else {
-    console.log('Сancel ed by user');
+    console.log('Сanceled by user');
   }
 
   console.log('\n');
 });
 
-buttonTransactionIdRef.addEventListener('click', () => {
-  console.log('Сancel ed by user');
+btnTransactionIdRef.addEventListener('click', () => {
+  let availableId = '';
+  for (let i = 0; i < account.transactions.length; i += 1) {
+    availableId =
+      i === account.transactions.length - 1
+        ? availableId + account.transactions[i].id
+        : availableId + account.transactions[i].id + ', ';
+  }
+
+  let getID = prompt(`List of available ID: ${availableId}`);
+  if (getID !== null) {
+    console.log(account.getTransactionDetails(+getID));
+  } else {
+    console.log('Сanceled by user');
+  }
+
   console.log('\n');
 });
 
-buttonTransactionTypeRef.addEventListener('click', () => {
-  console.log('Сancel ed by user');
+btnTransactionTypeDepositRef.addEventListener('click', () => {
+  console.log(account.getTransactionTotal('deposit'));
+  console.log('\n');
+});
+
+btnTransactionTypeWithdrawRef.addEventListener('click', () => {
+  console.log(account.getTransactionTotal('withdraw'));
   console.log('\n');
 });
