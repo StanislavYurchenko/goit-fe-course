@@ -1,47 +1,138 @@
 'use strict';
 
-const buttonRef = document.getElementById('task-07-do');
-const inputStringRef = document.querySelector('.task-07__form .form__input--string');
-
-const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
-
-const isLoginValid = function (login) {
-  const isValid = login.length >= 4 && login.length <= 16 ? true : false;
-  if (!isValid) {
-    console.log('Mistake! Login must be between 4 and 16 symbols');
-  }
-  return isValid;
+/*
+ * Типов транзацкий всего два.
+ * Можно положить либо снять деньги со счета.
+ */
+const Transaction = {
+  DEPOSIT: 'deposit',
+  WITHDRAW: 'withdraw',
 };
 
-const isLoginUnique = function (allLogins, login) {
-  const isUnique = !allLogins.includes(login);
-  if (!isUnique) {
-    console.log('This login is unavailable, select another please.');
-  }
-  return isUnique;
+/*
+ * Каждая транзакция это объект со свойствами: id, type и amount
+ */
+
+const account = {
+  // Текущий баланс счета
+  balance: 0,
+
+  // История транзакций
+  transactions: [],
+
+  /*
+   * Метод создает и возвращает объект транзакции.
+   * Принимает сумму и тип транзакции.
+   */
+  createTransaction(amount, type) {
+    const id = this.transactions.length + 1;
+    const transactionObj = { id, type, amount };
+    // this.transactions.push(transactionObj);
+    return transactionObj;
+  },
+
+  /*
+   * Метод отвечающий за добавление суммы к балансу.
+   * Принимает сумму танзакции.
+   * Вызывает createTransaction для создания объекта транзакции
+   * после чего добавляет его в историю транзакций
+   */
+  deposit(amount) {
+    this.createTransaction(amount, Transaction.DEPOSIT);
+    this.balance += +amount;
+    console.log(`You add "${amount}" credits, Your new balance "${this.balance}" credits`);
+    return this.balance;
+  },
+
+  /*
+   * Метод отвечающий за снятие суммы с баланса.
+   * Принимает сумму танзакции.
+   * Вызывает createTransaction для создания объекта транзакции
+   * после чего добавляет его в историю транзакций.
+   *
+   * Если amount больше чем текущий баланс, выводи сообщение
+   * о том, что снятие такой суммы не возможно, недостаточно средств.
+   */
+  withdraw(amount) {
+    this.createTransaction(amount, Transaction.WITHDRAW);
+    if (+amount > this.balance) {
+      console.log(`Not enough credits on your account, Your balance "${this.balance}" credits`);
+      return this.balance;
+    }
+
+    this.balance -= +amount;
+    console.log(`You withdraw "${amount}" credits, Your new balance "${this.balance}" credits`);
+    return this.balance;
+  },
+
+  /*
+   * Метод возвращает текущий баланс
+   */
+  getBalance() {
+    return this.balance;
+  },
+
+  /*
+   * Метод ищет и возвращает объект транзации по id
+   */
+  getTransactionDetails(id) {},
+
+  /*
+   * Метод возвращает количество средств
+   * определенного типа транзакции из всей истории транзакций
+   */
+  getTransactionTotal(type) {},
 };
 
-const addLogin = function (allLogins, login) {
-  const isValid = isLoginValid(login);
-  const isInclude = isLoginUnique(allLogins, login);
-  if (isValid && isInclude) {
-    allLogins.push(login);
-    console.log(`Login "${login}" successfully added.`);
-    return true;
+const buttonDepositRef = document.getElementById('task-07-deposit');
+const buttonBalanceRef = document.getElementById('task-07-balance');
+const buttonWithdrawRef = document.getElementById('task-07-withdraw');
+const buttonTransactionIdRef = document.getElementById('task-07-transaction-id');
+const buttonTransactionTypeRef = document.getElementById('task-07-transaction-type');
+
+buttonBalanceRef.addEventListener('click', () => {
+  console.log(account.getBalance());
+  console.log('\n');
+});
+
+buttonDepositRef.addEventListener('click', () => {
+  let getAmount = prompt('how many credits do you want to put into your account?');
+
+  if (getAmount !== null) {
+    if (Number.isNaN(+getAmount)) {
+      console.log('Enter the number [0...9]! Try again!');
+    } else {
+      console.log(account.deposit(getAmount));
+    }
   } else {
-    return false;
+    console.log('Сancel ed by user');
   }
-};
 
-buttonRef.addEventListener('click', () => {
-  const inputLogin = inputStringRef.value.trim();
-  inputStringRef.value = inputLogin;
+  console.log('\n');
+});
 
-  const isAddedLogin = addLogin(logins, inputLogin);
+buttonWithdrawRef.addEventListener('click', () => {
+  let getAmount = prompt('how many credits do you want to put into your account?');
 
-  if (isAddedLogin) {
-    inputStringRef.value = '';
-    console.log(`New list of logins: [${logins}].`);
+  if (getAmount !== null) {
+    if (Number.isNaN(+getAmount)) {
+      console.log('Enter the number [0...9]! Try again!');
+    } else {
+      console.log(account.withdraw(getAmount));
+    }
+  } else {
+    console.log('Сancel ed by user');
   }
+
+  console.log('\n');
+});
+
+buttonTransactionIdRef.addEventListener('click', () => {
+  console.log('Сancel ed by user');
+  console.log('\n');
+});
+
+buttonTransactionTypeRef.addEventListener('click', () => {
+  console.log('Сancel ed by user');
   console.log('\n');
 });

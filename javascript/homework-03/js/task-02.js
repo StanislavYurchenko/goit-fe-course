@@ -1,42 +1,21 @@
 'use strict';
 
 const buttonRef = document.getElementById('task-02-do');
-const inputEngravingRef = document.querySelector('.task-02__form .form__input--engraving');
-const inputPriseRef = document.querySelector('.task-02__form .form__input--prise');
 
-const engraving1 = 'Proin sociis natoque et magnis parturient montes mus';
-const engraving2 = 'Donec orci lectus aliquam est magnis';
+const objects = [
+  {},
+  { name: 'Mango', age: 2 },
+  { mail: 'poly@mail.com', isOnline: true, score: 500 },
+];
 
-let messageFromUser;
-let engraving;
-
-const calculateEngravingPrice = function (engraving, pricePerWord) {
-  const engravingArrLengthInt = +engraving.split(' ').length;
-  const totalPrice = engravingArrLengthInt * pricePerWord;
-  return [totalPrice, engravingArrLengthInt];
+const countProps = function (objs) {
+  for (let obj of objs) {
+    let length = Object.keys(obj).length;
+    console.log(obj, ` has "${length}" propety(es)`);
+  }
+  return objs;
 };
 
-inputPriseRef.addEventListener('keyup', function () {
-  this.value = this.value.replace(/[^\d]/g, '');
-});
-
 buttonRef.addEventListener('click', () => {
-  if (inputEngravingRef.value == engraving1) {
-    inputEngravingRef.value = engraving2;
-  } else if (inputEngravingRef.value == engraving2) {
-    inputEngravingRef.value = engraving1;
-  }
-
-  if (!inputEngravingRef.value) {
-    inputEngravingRef.value = engraving1;
-  }
-
-  const pricePerOne = +inputPriseRef.value;
-
-  const messageForUser = calculateEngravingPrice(inputEngravingRef.value, pricePerOne);
-  console.log(`You want engrave "${inputEngravingRef.value}", price per one -  ${pricePerOne}`);
-  console.log(
-    `This phrase contains ${messageForUser[1]} word(s), it will be cost ${messageForUser[0]} credits.`,
-  );
-  console.log('\n');
+  console.log(countProps(objects));
 });

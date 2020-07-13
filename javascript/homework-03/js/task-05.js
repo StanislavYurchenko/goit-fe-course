@@ -1,41 +1,34 @@
 'use strict';
 
 const buttonRef = document.getElementById('task-05-do');
-const inputStringRef = document.querySelector('.task-05__form .form__input--string');
 
-const messages = [
-  'Latest technology news',
-  'JavaScript weekly newsletter',
-  'Get best sale offers now!',
-  '[SPAM] How to earn fast money?',
+const products = [
+  { name: 'Радар', price: 1300, quantity: 4 },
+  { name: 'Сканер', price: 2700, quantity: 3 },
+  { name: 'Дроид', price: 400, quantity: 7 },
+  { name: 'Захват', price: 1200, quantity: 2 },
 ];
 
-const bannedWords = ['spam', 'sale'];
-
-const checkForSpam = function (messages, filterWords) {
-  let isBannedWord = false;
-  for (let i = 0; i < messages.length; i += 1) {
-    for (let j = 0; j < filterWords.length; j += 1) {
-      if (messages[i].toLowerCase().includes(filterWords[j].toLowerCase())) {
-        console.log(`"${messages[i]}" consider banned word "${filterWords[j]}"`);
-        isBannedWord = true;
-      }
+const getAllPropValues = function (arr, prop) {
+  // твой код
+  const array = [];
+  for (let item of arr) {
+    if (item[prop] !== undefined) {
+      array.push(item[prop]);
     }
   }
-
-  if (!isBannedWord) {
-    console.log('Messages do not consider banned word');
-  }
+  return array;
 };
 
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
 buttonRef.addEventListener('click', () => {
-  if (!inputStringRef.value.trim()) {
-    checkForSpam(messages, bannedWords);
-  } else {
-    const customMessage = [];
-    customMessage[0] = inputStringRef.value;
-    checkForSpam(customMessage, bannedWords);
-  }
+  console.log(getAllPropValues(products, 'name')); // ['Радар', 'Сканер', 'Дроид', 'Захват']
+
+  console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
+
+  console.log(getAllPropValues(products, 'category')); // []
 
   console.log('\n');
 });

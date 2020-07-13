@@ -1,46 +1,38 @@
 'use strict';
 
 const buttonRef = document.getElementById('task-04-do');
-const inputStringRef = document.querySelector('.task-04__form .form__input--string');
-const inputNumberRef = document.querySelector('.task-04__form .form__input--number');
 
-const strings = [
-  'Curabitur ligula sapien, tincidunt non.',
-  'Vestibulum facilisis, purus nec pulvinar iaculis.',
-  'Curabitur ligula sapien.',
-  'Nunc sed turpis.Curabitur a felis in nunc fringilla tristique.',
-];
-
-const formatString = function (stringOfWords, lengthStr) {
-  let shortStringOfWords;
-  for (let i = 0; i < stringOfWords.length; i += 1) {
-    shortStringOfWords = stringOfWords;
-    if (i >= lengthStr) {
-      shortStringOfWords = stringOfWords.slice(0, i) + '...';
-      return shortStringOfWords;
-    }
+const countTotalSalary = function (employees) {
+  let totalSalery = 0;
+  const saleryList = Object.values(employees);
+  for (let salery of saleryList) {
+    totalSalery += +salery;
   }
-  return shortStringOfWords;
+  return totalSalery;
 };
 
-inputNumberRef.addEventListener('keyup', function () {
-  this.value = this.value.replace(/[^\d]/g, '');
-});
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
 
 buttonRef.addEventListener('click', () => {
-  if (inputNumberRef.value === '') {
-    inputNumberRef.value = 40;
-  }
+  console.log(countTotalSalary({})); // 0
 
-  if (!inputStringRef.value.trim()) {
-    for (let i = 0; i < strings.length; i += 1) {
-      const resalt = formatString(strings[i], inputNumberRef.value);
-      console.log(resalt);
-    }
-  } else {
-    const resalt = formatString(inputStringRef.value, inputNumberRef.value);
-    console.log(resalt);
-  }
+  console.log(
+    countTotalSalary({
+      mango: 100,
+      poly: 150,
+      alfred: 80,
+    }),
+  ); // 330
+
+  console.log(
+    countTotalSalary({
+      kiwi: 200,
+      lux: 50,
+      chelsy: 150,
+    }),
+  ); // 400
 
   console.log('\n');
 });

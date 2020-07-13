@@ -11,14 +11,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
       rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
       rel="stylesheet"
-    />
+    /> -->
   </head>
   <body class="body">
     <header class="container header-container">
@@ -116,17 +116,6 @@
             </div>
 
             <form class="task-04__form form">
-              <input
-                type="text"
-                class="form__input form__input--string"
-                placeholder="Введите строку для форматирования"
-              />
-              <input
-                type="text"
-                class="form__input form__input--number"
-                value="40"
-                placeholder="*кол-во символов"
-              />
               <button type="button" class="form__button button" id="task-04-do">
                 do
               </button>
@@ -141,16 +130,11 @@
               <p>
                 Напиши функцию <span class="code">getAllPropValues (arr, prop)</span>, которая
                 получает массив объектов и имя свойства. Возвращает массив значений определенного
-                свойства prop из каждого объекта в массиве.
+                свойства <span class="code">prop</span> из каждого объекта в массиве.
               </p>
             </div>
 
             <form class="task-05__form form">
-              <input
-                type="text"
-                class="form__input form__input--string"
-                placeholder="Введите строку для поиска запрещенных слов"
-              />
               <button type="button" class="form__button button" id="task-05-do">
                 do
               </button>
@@ -194,13 +178,25 @@
             </div>
 
             <form class="task-07__form form">
-              <input
+              <!-- <input
                 type="text"
                 class="form__input form__input--string"
                 placeholder="Введите логин"
-              />
-              <button type="button" class="form__button button" id="task-07-do">
-                do
+              /> -->
+              <button type="button" class="form__button button" id="task-07-deposit">
+                Deposit
+              </button>
+              <button type="button" class="form__button button" id="task-07-withdraw">
+                Withdraw
+              </button>
+              <button type="button" class="form__button button" id="task-07-balance">
+                Balance
+              </button>
+              <button type="button" class="form__button button" id="task-07-transaction-id">
+                Transaction by ID
+              </button>
+              <button type="button" class="form__button button" id="task-07-transaction-type">
+                Transaction by TYPE
               </button>
             </form>
           </div>
