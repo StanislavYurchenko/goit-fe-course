@@ -38,7 +38,7 @@ const account = {
    * после чего добавляет его в историю транзакций
    */
   deposit(amount) {
-    this.createTransaction(amount, Transaction.DEPOSIT);
+    this.createTransaction(+amount, Transaction.DEPOSIT);
     this.balance += +amount;
     console.log(`You add "${amount}" credits, Your new balance "${this.balance}" credits`);
     return this.balance;
@@ -54,12 +54,11 @@ const account = {
    * о том, что снятие такой суммы не возможно, недостаточно средств.
    */
   withdraw(amount) {
-    this.createTransaction(amount, Transaction.WITHDRAW);
     if (+amount > this.balance) {
       console.log(`Not enough credits on your account, Your balance "${this.balance}" credits`);
       return this.balance;
     }
-
+    this.createTransaction(+amount, Transaction.WITHDRAW);
     this.balance -= +amount;
     console.log(`You withdraw "${amount}" credits, Your new balance "${this.balance}" credits`);
     return this.balance;
@@ -97,6 +96,20 @@ const account = {
     }
     return total;
   },
+
+  /*
+   * Метод возвращает строку ID всех транзакций
+   */
+  getAvailableId() {
+    let availableId = '';
+    for (let i = 0; i < this.transactions.length; i += 1) {
+      availableId =
+        i === this.transactions.length - 1
+          ? availableId + account.transactions[i].id
+          : availableId + account.transactions[i].id + ', ';
+    }
+    return availableId;
+  },
 };
 
 const btnDepositRef = document.getElementById('task-07-deposit');
@@ -107,7 +120,7 @@ const btnTransactionTypeDepositRef = document.getElementById('task-07-transactio
 const btnTransactionTypeWithdrawRef = document.getElementById('task-07-transaction-type-withdraw');
 
 btnBalanceRef.addEventListener('click', () => {
-  console.log(account.getBalance());
+  console.log(`Your balance is "${account.getBalance()}" credits`);
   console.log('\n');
 });
 
@@ -128,7 +141,7 @@ btnDepositRef.addEventListener('click', () => {
 });
 
 btnWithdrawRef.addEventListener('click', () => {
-  let getAmount = prompt('how many credits do you want to put into your account?');
+  let getAmount = prompt('how many credits do you want to withdraw from your account?');
 
   if (getAmount !== null) {
     if (Number.isNaN(+getAmount) || +getAmount <= 0) {
@@ -144,13 +157,13 @@ btnWithdrawRef.addEventListener('click', () => {
 });
 
 btnTransactionIdRef.addEventListener('click', () => {
-  let availableId = '';
-  for (let i = 0; i < account.transactions.length; i += 1) {
-    availableId =
-      i === account.transactions.length - 1
-        ? availableId + account.transactions[i].id
-        : availableId + account.transactions[i].id + ', ';
-  }
+  let availableId = account.getAvailableId();
+  // for (let i = 0; i < account.transactions.length; i += 1) {
+  //   availableId =
+  //     i === account.transactions.length - 1
+  //       ? availableId + account.transactions[i].id
+  //       : availableId + account.transactions[i].id + ', ';
+  // }
 
   let getID = prompt(`List of available ID: ${availableId}`);
   if (getID !== null) {
@@ -163,11 +176,13 @@ btnTransactionIdRef.addEventListener('click', () => {
 });
 
 btnTransactionTypeDepositRef.addEventListener('click', () => {
-  console.log(account.getTransactionTotal('deposit'));
+  const totalDeposit = account.getTransactionTotal('deposit');
+  console.log(`Total credits added - "${totalDeposit}"`);
   console.log('\n');
 });
 
 btnTransactionTypeWithdrawRef.addEventListener('click', () => {
-  console.log(account.getTransactionTotal('withdraw'));
+  const totalWithdraw = account.getTransactionTotal('withdraw');
+  console.log(`Total credits withdraw - "${totalWithdraw}"`);
   console.log('\n');
 });
