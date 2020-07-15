@@ -126,7 +126,6 @@ btnBalanceRef.addEventListener('click', () => {
 
 btnDepositRef.addEventListener('click', () => {
   let getAmount = prompt('how many credits do you want to put into your account?');
-
   if (getAmount !== null) {
     if (Number.isNaN(+getAmount) || +getAmount <= 0) {
       console.log('Enter the number [0...9]! Try again!');
@@ -136,7 +135,6 @@ btnDepositRef.addEventListener('click', () => {
   } else {
     console.log('Сancel ed by user');
   }
-
   console.log('\n');
 });
 
@@ -152,26 +150,16 @@ btnWithdrawRef.addEventListener('click', () => {
   } else {
     console.log('Сanceled by user');
   }
-
   console.log('\n');
 });
 
 btnTransactionIdRef.addEventListener('click', () => {
-  let availableId = account.getAvailableId();
-  // for (let i = 0; i < account.transactions.length; i += 1) {
-  //   availableId =
-  //     i === account.transactions.length - 1
-  //       ? availableId + account.transactions[i].id
-  //       : availableId + account.transactions[i].id + ', ';
-  // }
-
-  let getID = prompt(`List of available ID: ${availableId}`);
+  let getID = prompt(`List of available ID: ${account.getAvailableId()}`);
   if (getID !== null) {
     console.log(account.getTransactionDetails(+getID));
   } else {
     console.log('Сanceled by user');
   }
-
   console.log('\n');
 });
 
