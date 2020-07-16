@@ -29,9 +29,27 @@ const letRemoveClass = function (activSlide, classForChange, classRef) {
   }
 };
 
+const letAddClass = function (activSlide, classForChange, classRef) {
+  for (let i = 0; i < classRef.length; i += 1) {
+    if (i === activSlide) {
+      const ref = classRef[i];
+      ref.classList.add(`${classForChange}`);
+    } else {
+      const ref = classRef[i];
+      ref.classList.remove(`${classForChange}`);
+    }
+  }
+};
+
 const btmSlideHolder = () => {
   letRemoveClass(numberActiveSlide, 'slide--small', slideRef);
-  letRemoveClass(numberActiveSlide, 'display-none', slideBoxRef);
+  letRemoveClass(numberActiveSlide, 'visually-hidden', slideBoxRef);
+  letAddClass(numberActiveSlide, 'slide__box--active', slideBoxRef);
+};
+
+const btmNavHolder = () => {
+  numberActiveSlide = navSliderBtnNext(numberActiveSlide, totalSlides);
+  btmSlideHolder();
 };
 
 slideRef[0].addEventListener('click', () => {

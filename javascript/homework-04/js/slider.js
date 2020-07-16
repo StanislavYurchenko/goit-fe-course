@@ -35,11 +35,6 @@ const btmSlideHolder = () => {
   letRemoveClass(numberActiveSlide, 'display-none', slideBoxRef);
 };
 
-const btmNavHolder = () => {
-  numberActiveSlide = navSliderBtnNext(numberActiveSlide, totalSlides);
-  btmSlideHolder();
-};
-
 slideRef[0].addEventListener('click', () => {
   numberActiveSlide = 0;
   btmSlideHolder();
@@ -50,6 +45,12 @@ slideRef[1].addEventListener('click', () => {
   btmSlideHolder();
 });
 
-btnPrevRef.addEventListener('click', () => btmNavHolder());
+btnPrevRef.addEventListener('click', () => {
+  numberActiveSlide = navSliderBtnPrev(numberActiveSlide, totalSlides);
+  btmSlideHolder();
+});
 
-btnNextRef.addEventListener('click', () => btmNavHolder());
+btnNextRef.addEventListener('click', () => {
+  numberActiveSlide = navSliderBtnNext(numberActiveSlide, totalSlides);
+  btmSlideHolder();
+});
