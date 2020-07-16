@@ -4,21 +4,21 @@ const buttonRef = document.getElementById('task-12-do');
 
 const array = [5, 5, 5, [1, 1, 2, [2, 6], [1]], 2, [5]];
 
-const deepArraySumm = function (arr) {
-  let total = 0;
-
+let total = 0;
+const deepArraySum = function (arr) {
   for (let item of arr) {
-    console.log(item);
+    if (typeof item === 'number') {
+      total += item;
+    } else {
+      deepArraySum(item);
+    }
   }
-
-  // for (let i = 0; i < arr.length; i += 1) {
-  //   console.log(arr[i]);
-  // }
-
   return total;
 };
 
 buttonRef.addEventListener('click', () => {
-  deepArraySumm(array);
+  console.log(array);
+  total = 0;
+  console.log(`sum of all elements of array is "${deepArraySum(array)}"`);
   console.log('\n');
 });
