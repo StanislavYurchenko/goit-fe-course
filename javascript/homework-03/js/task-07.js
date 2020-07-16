@@ -75,12 +75,11 @@ const account = {
    * Метод ищет и возвращает объект транзации по id
    */
   getTransactionDetails(id) {
-    for (let i = 0; i < this.transactions.length; i += 1) {
-      if (this.transactions[i].id === id) {
-        return this.transactions[i];
-      }
+    let transaction = this.transactions.find(item => item.id == id);
+    if (transaction === undefined) {
+      return `There is no ID:"${id}"`;
     }
-    return `There is no ID:"${id}"`;
+    return transaction;
   },
 
   /*
