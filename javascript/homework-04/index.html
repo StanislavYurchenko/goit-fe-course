@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homework JS 04</title>
+    <meta name="author" content="Stas Yurchenko" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="GoIT, JS, task " />
+    <meta name="description" content="task  HTML and CSS" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="body">
+    <header class="container header-container">
+      <div class="header-box">
+        <a href="https://goit.ua/" target="_blank" class="link"
+          ><img class="logo" src="./img/logo-go-it.png" alt="logo GoIt" width="100" height="30"
+        /></a>
+        <div class="curse">FE Advanced #21</div>
+      </div>
+    </header>
+    <main class="main container slider-container">
+      <h1 class="title main-title">Домашняя работа №4</h1>
+      <div class="slider">
+        <section class="task task-01 slide" id="slide-0">
+          <div class="slide__box">
+            <h2 class="title">Задание 1</h2>
+            <div class="task__desc">
+              <p>
+                Расставь отсутствующие <span class="code">this</span> в методах объекта account.
+              </p>
+              <p>
+                <pre class="code">
+    const account = {
+      owner: 'Mango',
+      balance: 24000,
+      discount: 0.1,
+      orders: ['order-1', 'order-2', 'order-3'],
+      changeDiscount(value) {
+        discount = value;
+      },
+      showOrders() {
+        return orders;
+      },
+      addOrder(cost, order) {
+        balance -= cost;
+        orders.push(order);
+      },
+    };
+    
+    account.changeDiscount(0.15);
+    console.log(account.discount); // 0.15
+    
+    console.table(account.showOrders()); 
+      // ['order-1', 'order-2', 'order-3']
+    
+    account.addOrder(5000, 'order-4');
+    console.log(account.balance); // 19000
+    console.table(account.showOrders()); 
+      // ['order-1', 'order-2', 'order-3', 'order-4']
+                </pre>
+              </p>
+            </div>
+
+            <form class="task-01__form form">
+              <button type="button" class="button" id="task-01-do">do</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="task task-02 slide slide--small" id="slide-1">
+          <div class="slide__box display-none">
+            <h2 class="title">Задание 2</h2>
+            <div class="task__desc">
+              <p>
+                Исправь ошибки которые будут в консоли, чтобы скрипт заработал.
+              </p>
+              <pre class="code">
+    const inventory = {
+      items: ['Knife', 'Gas mask'],
+      add(itemName) {
+        console.log(`Adding ${itemName} to inventory`);
+    
+        this.items.push(itemName);
+      },
+      remove(itemName) {
+        console.log(`Removing ${itemName} from inventory`);
+    
+        this.items = this.items.filter(item => item !== itemName);
+      },
+    };
+    
+    const invokeInventoryAction = function(itemName, action) {
+      console.log(`Invoking action on ${itemName}`);
+      action(itemName);
+    };
+    
+    invokeInventoryAction('Medkit', inventory.add);
+    // Invoking action on Medkit
+    // Adding Medkit to inventory
+    
+    console.log(inventory.items); // ['Knife', 'Gas mask', 'Medkit']
+    
+    invokeInventoryAction('Gas mask', inventory.remove);
+    // Invoking action on Gas mask
+    // Removing Gas mask from inventory
+    
+    console.log(inventory.items); // ['Knife', 'Medkit']              
+              </pre>
+            </div>
+
+            <form class="task-02__form form">
+              <button type="button" class="form__button button" id="task-02-do">
+                do
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <div class="slider__nav">
+        <button class="slider__btn slider__btn--prev button">prev</button>
+        <button class="slider__btn slider__btn--next button">next</button>
+      </div>
+    </main>
+
+    <script src="./js/task-01.js" type="module"></script>
+    <script src="./js/task-02.js" type="module"></script>
+
+    <script src="./js/slider.js" type="module"></script>
+  </body>
+</html>
