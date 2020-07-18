@@ -11,14 +11,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
       rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
       rel="stylesheet"
-    />
+    /> -->
   </head>
   <body class="body">
     <header class="container header-container">
@@ -37,27 +37,34 @@
             <h2 class="title">Задание 1</h2>
             <div class="task__desc">
               <p>
-                Напиши скрипт, который, для объекта <span class="code">user</span>, последовательно:
+                <!-- <code class="code"></code> -->
+                Напиши функцию-конструктор <code class="code">Account</code>, которая создает объект
+                со свойствами <code class="code">login</code> и <code class="code">email</code>. В
+                <code class="code">prototype</code> функции-конструктора добавь метод
+                <code class="code">getInfo()</code>, который выводит в консоль значения полей
+                <code class="code">login</code> и <code class="code">email</code> объекта который
+                его вызвал.
               </p>
-              <ul>
-                <li>
-                  добавляет поле <span class="code">mood</span> со значением
-                  <span class="code">'happy'</span>
-                </li>
-                <li>
-                  заменяет значение <span class="code">hobby</span> на
-                  <span class="code">'skydiving'</span>
-                </li>
-                <li>
-                  заменяет значение <span class="code">premium</span> на
-                  <span class="code">false</span>
-                </li>
-                <li>
-                  выводит содержимое объекта <span class="code">user</span> в формате ключ:значение
-                  используя <span class="code">Object.keys()</span> и
-                  <span class="code">for...of</span>
-                </li>
-              </ul>
+              <pre class="code">
+    console.log(Account.prototype.getInfo); 
+    // function
+    
+    const mango = new Account({
+      login: 'Mangozedog',
+      email: 'mango@dog.woof',
+    });
+    
+    mango.getInfo(); 
+    // Login: Mangozedog, Email: mango@dog.woof
+    
+    const poly = new Account({
+      login: 'Poly',
+      email: 'poly@mail.com',
+    });
+    
+    poly.getInfo(); 
+    // Login: Poly, Email: poly@mail.com
+              </pre>
             </div>
 
             <form class="task-01__form form">
@@ -71,10 +78,40 @@
             <h2 class="title">Задание 2</h2>
             <div class="task__desc">
               <p>
-                Напиши функцию <span class="code">countProps(obj)</span>, считающую кол-во свойств в
-                объекте. Функция возвращает число - количество свойств.
+                Напиши класс <code class="code">User</code> для создания пользователя со следующим
+                свойствами:
+              </p>
+              <ul>
+                <li class="code"><code class="code">name</code> - строка</li>
+                <li class="code"><code class="code">age</code> - число</li>
+                <li class="code"><code class="code">followers</code> - число</li>
+              </ul>
+              <p>
+                Добавь метод <code class="code">getInfo()</code>, который, выводит строку:
+                <code class="code">User ${имя}</code> is <code class="code">${возраст}</code> years
+                old and has <code class="code">${кол-во фоловеров}</code> followers
               </p>
             </div>
+
+            <pre class="code">
+    const mango = new User({
+      name: 'Mango',
+      age: 2,
+      followers: 20,
+    });
+    
+    mango.getInfo(); 
+    // User Mango is 2 years old and has 20 followers
+    
+    const poly = new User({
+      name: 'Poly',
+      age: 3,
+      followers: 17,
+    });
+    
+    poly.getInfo(); 
+    // User Poly is 3 years old and has 17 followers
+            </pre>
 
             <form class="task-02__form form">
               <button type="button" class="form__button button" id="task-02-do">
@@ -89,11 +126,44 @@
             <h2 class="title">Задание 3</h2>
             <div class="task__desc">
               <p>
-                Напиши функцию <span class="code">findBestEmployee (employees)</span>, которая
-                принимает объект сотрудников и возвращает имя самого продуктивного (который выполнил
-                больше всех задач). Сотрудники и кол-во выполненых задач содержатся как свойства
-                объекта в формате <span class="code">"имя":"кол-во задач"</span>.
+                Напиши класс Storage, который будет создавать объекты для управления складом
+                товаров. При вызове будет получать один аргумент - начальный массив товаров, и
+                записывать его в свойство items.
               </p>
+              <p>
+                Добавь методы класса:
+              </p>
+              <ul>
+                <li><code class="code">getItems()</code> - возвращает массив текущих товаров</li>
+                <li>
+                  <code class="code">addItem(item)</code> - получает новый товар и добавляет его к
+                  текущим
+                </li>
+                <li>
+                  <code class="code">removeItem(item)</code> - получет товар и, если он есть,
+                  удаляет его из текущих
+                </li>
+              </ul>
+              <pre class="code">
+    const storage = new Storage([
+      'Нанитоиды',
+      'Пролонгер',
+      'Железные жупи',
+      'Антигравитатор',
+    ]);
+    
+    const items = storage.getItems();
+    console.table(items); 
+    // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
+    
+    storage.addItem('Дроид');
+    console.table(storage.items); 
+    // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
+    
+    storage.removeItem('Пролонгер');
+    console.table(storage.items); 
+    // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
+              </pre>
             </div>
             <form class="task-03__form form">
               <button type="button" class="form__button button" id="task-03-do">
@@ -108,11 +178,43 @@
             <h2 class="title">Задание 4</h2>
             <div class="task__desc">
               <p>
-                Напиши функцию <span class="code">countTotalSalary (employees)</span> принимающую
-                объект зарплат. Функция считает общую сумму запрплаты работников и возращает ее.
-                Каждое поле объекта, передаваемого в функцию, имеет вид
-                <span class="code">"имя":"зарплата"</span>.
+                Напиши класс <code class="code"></code>StringBuilder. На вход он получает один
+                параметр - строку, которую записывает в свойство <code class="code"></code>_value.
               </p>
+              <p>
+                Добавь классу следующий функционал:
+              </p>
+              <ul>
+                <li>
+                  Геттер <code class="code">value</code> - возвращает текущее значение поля
+                  <code class="code">_value</code>
+                </li>
+                <li>
+                  Метод <code class="code">append(str)</code> - получает парметр str (строку) и
+                  добавляет ее в конец <code class="code">_value</code>
+                </li>
+
+                <li>
+                  Метод <code class="code">prepend(str)</code> - получает парметр str (строку) и
+                  добавляет ее в начало value
+                </li>
+                <li>
+                  Метод <code class="code">pad(str)</code> - получает парметр str (строку) и
+                  добавляет ее в начало и в конец <code class="code">_value</code>
+                </li>
+              </ul>
+              <pre class="code">
+    const builder = new StringBuilder('.');
+
+    builder.append('^');
+    console.log(builder.value); // '.^'
+
+    builder.prepend('^');
+    console.log(builder.value); // '^.^'
+
+    builder.pad('=');
+    console.log(builder.value); // '=^.^='
+              </pre>
             </div>
 
             <form class="task-04__form form">
@@ -127,82 +229,92 @@
           <div class="slide__box visually-hidden">
             <h2 class="title">Задание 5</h2>
             <div class="task__desc">
-              <p>
-                Напиши функцию <span class="code">getAllPropValues (arr, prop)</span>, которая
-                получает массив объектов и имя свойства. Возвращает массив значений определенного
-                свойства <span class="code">prop</span> из каждого объекта в массиве.
-              </p>
+              <p>Напиши класс <code class="code">Car</code> с указанными свойствами и методами.</p>
             </div>
+            <pre class="code">
+    class Car {
+      /*
+       * Добавь статический метод `getSpecs(car)`,
+       * который принимает объект-машину как параметр и 
+       * выводитв консоль значения свойств maxSpeed, 
+       * speed, isOn, distance и price.
+       */
+    
+      /*
+       * Конструктор получает объект настроек.
+       *
+       * Добавь свойства будущеего экземпляра класса:
+       *  speed - текущая скорость, изначально 0
+       *  price - цена автомобиля
+       *  maxSpeed - максимальная скорость
+       *  isOn - заведен ли автомобиль, значения true или 
+       *  false. Изначально false
+       *  distance - общий киллометраж, изначально 0
+       */
+      constructor() {}
+    
+      /*
+       * Добавь геттер и сеттер для свойства price,
+       * который будет работать с свойством цены автомобиля.
+       */
+    
+      /*
+       * Добавь код для того чтобы завести автомобиль
+       * Записывает в свойство isOn значение true
+       */
+      turnOn() {}
+    
+      /*
+       * Добавь код для того чтобы заглушить автомобиль
+       * Записывает в свойство isOn значение false,
+       * и сбрасывает текущую скорость в 0
+       */
+      turnOff() {}
+    
+      /*
+       * Добавялет к свойству speed полученное значение,
+       * при условии что результирующая скорость
+       * не больше чем значение свойства maxSpeed
+       */
+      accelerate(value) {}
+    
+      /*
+       * Отнимает от свойства speed полученное значение,
+       * при условии что результирующая скорость не меньше нуля
+       */
+      decelerate(value) {}
+    
+      /*
+       * Добавляет в поле distance киллометраж (hours * speed),
+       * но только в том случае если машина заведена!
+       */
+      drive(hours) {}
+    }
+
+    const mustang = new Car({ maxSpeed: 200, price: 2000 });
+
+    mustang.turnOn();
+    mustang.accelerate(50);
+    mustang.drive(2);
+
+    Car.getSpecs(mustang);
+    // maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000
+
+    mustang.decelerate(20);
+    mustang.drive(1);
+    mustang.turnOff();
+
+    Car.getSpecs(mustang);
+    // maxSpeed: 200, speed: 0, isOn: false, distance: 130, price: 2000
+
+    console.log(mustang.price); // 2000
+    mustang.price = 4000;
+    console.log(mustang.price); // 4000
+            </pre>
 
             <form class="task-05__form form">
               <button type="button" class="form__button button" id="task-05-do">
                 do
-              </button>
-            </form>
-          </div>
-        </section>
-
-        <section class="task slide slide--small">
-          <div class="slide__box visually-hidden">
-            <h2 class="title">Задание 6</h2>
-            <div class="task__desc">
-              <p>
-                Напиши функцию
-                <span class="code">calculateTotalPrice (allProdcuts, productName)</span>, которая
-                получает массив объектов и имя продукта (значение свойства
-                <span class="code">name</span>). Возвращает общую стоимость продукта (цена *
-                количество).
-              </p>
-              <p>
-                Вызовы функции для проверки работоспособности твоей реализации.
-              </p>
-            </div>
-
-            <form class="task-06__form form">
-              <button type="button" class="form__button button" id="task-06-do">
-                do
-              </button>
-            </form>
-          </div>
-        </section>
-
-        <section class="task slide slide--small">
-          <div class="slide__box visually-hidden">
-            <h2 class="title">Задание 7</h2>
-            <div class="task__desc">
-              <p>
-                Напиши скрипт управления личным кабинетом интернет банка. Есть объект
-                <span class="code">account</span> в котором необходимо реализовать методы для работы
-                с балансом и историей транзакций.
-              </p>
-            </div>
-
-            <form class="task-07__form form">
-              <button type="button" class="form__button button" id="task-07-deposit">
-                Deposit
-              </button>
-              <button type="button" class="form__button button" id="task-07-withdraw">
-                Withdraw
-              </button>
-              <button type="button" class="form__button button" id="task-07-balance">
-                Balance
-              </button>
-              <button type="button" class="form__button button" id="task-07-transaction-id">
-                Transaction by ID
-              </button>
-              <button
-                type="button"
-                class="form__button button"
-                id="task-07-transaction-type-deposit"
-              >
-                Transaction - deposit
-              </button>
-              <button
-                type="button"
-                class="form__button button"
-                id="task-07-transaction-type-withdraw"
-              >
-                Transaction - withdraw
               </button>
             </form>
           </div>
@@ -220,8 +332,6 @@
     <script src="./js/task-03.js" type="module"></script>
     <script src="./js/task-04.js" type="module"></script>
     <script src="./js/task-05.js" type="module"></script>
-    <script src="./js/task-06.js" type="module"></script>
-    <script src="./js/task-07.js" type="module"></script>
 
     <script src="./js/slider.js" type="module"></script>
   </body>

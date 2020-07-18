@@ -105,7 +105,7 @@ img {
 
 .code {
   font-family: 'Space Mono', monospace;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* SLIDER */
@@ -123,7 +123,7 @@ img {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: flex-end;
-  height: 500px;
+  height: 600px;
   position: relative;
   margin-bottom: 10px;
   position: relative;
@@ -163,7 +163,6 @@ img {
 
 .slide--small {
   cursor: pointer;
-
   font-size: 10px;
   color: brown;
   opacity: 0.5;
@@ -186,6 +185,25 @@ img {
   z-index: 0;
 }
 
+.slide__box {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scrollbar-face-color: red;
+
+  scrollbar-shadow-color: black;
+
+  scrollbar-highlight-color: blue;
+
+  scrollbar-3dlight-color: green;
+
+  scrollbar-darkshadow-color: gold;
+
+  scrollbar-track-color: hotpink;
+
+  scrollbar-arrow-color: olive;
+}
+
 .slide__box--active {
   position: absolute;
   width: 100%;
@@ -200,4 +218,37 @@ img {
 
 .form__button:not(:last-child) {
   margin-bottom: 5px;
+}
+
+::-webkit-scrollbar {
+  /* 1 - скроллбар */
+  width: 4px;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+::-webkit-scrollbar-button {
+  /* 2 - кнопка */
+}
+
+::-webkit-scrollbar-track {
+  /* 3 - трек */
+}
+
+::-webkit-scrollbar-track-piece {
+  /* 4 - видимая часть трека */
+}
+
+::-webkit-scrollbar-thumb {
+  /* 5 - ползунок */
+  border-radius: 2px;
+  background-color: #d1d1d1;
+}
+
+::-webkit-scrollbar-corner {
+  /* 6 - уголок */
+}
+
+::-webkit-resizer {
+  /* 7 - изменение размеров */
 }

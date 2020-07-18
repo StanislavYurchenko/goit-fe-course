@@ -77,16 +77,6 @@ slideRef[4].addEventListener('click', () => {
   btmSlideHolder();
 });
 
-slideRef[5].addEventListener('click', () => {
-  numberActiveSlide = 5;
-  btmSlideHolder();
-});
-
-slideRef[6].addEventListener('click', () => {
-  numberActiveSlide = 6;
-  btmSlideHolder();
-});
-
 btnPrevRef.addEventListener('click', () => {
   numberActiveSlide = navSliderBtnPrev(numberActiveSlide, totalSlides);
   btmSlideHolder();

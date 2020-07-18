@@ -96,6 +96,14 @@ const account = {
     return total;
   },
 
+  getTransactionTotalTest(type) {
+    let result = this.transactions.reduce((sum = 0, current) => {
+      return current.type === type ? sum + current.amount : sum;
+    }, 0);
+
+    return result;
+  },
+
   /*
    * Метод возвращает строку ID всех транзакций
    */
@@ -163,8 +171,10 @@ btnTransactionIdRef.addEventListener('click', () => {
 });
 
 btnTransactionTypeDepositRef.addEventListener('click', () => {
-  const totalDeposit = account.getTransactionTotal('deposit');
+  // const totalDeposit = account.getTransactionTotal('deposit');
+  const totalDeposit = account.getTransactionTotalTest('deposit');
   console.log(`Total credits added - "${totalDeposit}"`);
+
   console.log('\n');
 });
 
