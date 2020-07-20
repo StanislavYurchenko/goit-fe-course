@@ -17,14 +17,6 @@ class Storage {
   }
 
   removeItem(item) {
-    // for (let i = 0; i < this.items.length; i += 1) {
-    //   if (this.items[i] === item) {
-    //     console.log('i', i);
-    //     this.items.splice(i, 1);
-    //     console.log(`"${item}" was removed successful`);
-    //     break;
-    //   }
-    // }
     const index = this.items.indexOf(item);
     if (index !== -1) {
       this.items.splice(index, 1);

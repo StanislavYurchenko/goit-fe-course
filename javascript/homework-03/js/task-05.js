@@ -10,10 +10,9 @@ const products = [
 ];
 
 const getAllPropValues = function (arr, prop) {
-  // твой код
   const array = [];
   for (let item of arr) {
-    if (item[prop] !== undefined) {
+    if (item.hasOwnProperty(prop)) {
       array.push(item[prop]);
     }
   }
