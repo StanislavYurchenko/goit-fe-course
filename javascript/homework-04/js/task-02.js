@@ -14,14 +14,14 @@ const inventory = {
   },
 };
 
-const invokeInventoryAction = function (itemName, action) {
+const invokeInventoryAction = function (itemName, action, obj) {
   console.log(`Invoking action on ${itemName}`);
-  action(itemName);
+  action.call(obj, itemName);
 };
 
 buttonRef.addEventListener('click', () => {
-  invokeInventoryAction('Medkit', inventory.add.bind(inventory));
+  invokeInventoryAction('Medkit', inventory.add, inventory);
   console.log(inventory.items);
-  invokeInventoryAction('Gas mask', inventory.remove.bind(inventory));
+  invokeInventoryAction('Gas mask', inventory.remove, inventory);
   console.log(inventory.items);
 });
