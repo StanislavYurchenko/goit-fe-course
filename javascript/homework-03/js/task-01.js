@@ -2,25 +2,61 @@
 
 const buttonRef = document.getElementById('task-01-do');
 
+const restaurants = [
+  {
+    order: [],
+    brand: 'KFC',
+    menu: {
+      chicken: 50,
+      burger: 50,
+    },
+    deliveryTime: 60,
+  },
+  {
+    order: [],
+    brand: 'mcDonalds',
+    menu: {
+      cola: 25,
+      burger: 30,
+    },
+    deliveryTime: 30,
+  },
+  {
+    order: [],
+    brand: 'Burger King',
+    menu: {
+      burgerXXL: 170,
+      burger: 70,
+    },
+    deliveryTime: 20,
+  },
+];
+
+const services = {
+  showMenu() {},
+  getMenu() {},
+  addOrder() {},
+  confirmOrder() {},
+};
+
 buttonRef.addEventListener('click', () => {
+  message = 'Enter number [0-9]...';
+  input = prompt(message);
+  if (input !== null) {
+  }
   const user = {
     name: 'Mango',
     age: 20,
     hobby: 'html',
     premium: true,
   };
-
   console.log('original object: ', user);
   user.mood = 'happy';
   user.hobby = 'skydiving';
   user.premium = false;
-
   console.log('modified object: ', user);
-
   const keys = Object.keys(user);
-
   console.log('keys of array: ', keys);
-
   console.log('--key:value--');
   for (let key of keys) {
     console.log(`${key}:${user[key]}`);

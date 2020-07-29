@@ -29,9 +29,27 @@ const letRemoveClass = function (activSlide, classForChange, classRef) {
   }
 };
 
+const letAddClass = function (activSlide, classForChange, classRef) {
+  for (let i = 0; i < classRef.length; i += 1) {
+    if (i === activSlide) {
+      const ref = classRef[i];
+      ref.classList.add(`${classForChange}`);
+    } else {
+      const ref = classRef[i];
+      ref.classList.remove(`${classForChange}`);
+    }
+  }
+};
+
 const btmSlideHolder = () => {
   letRemoveClass(numberActiveSlide, 'slide--small', slideRef);
-  letRemoveClass(numberActiveSlide, 'display-none', slideBoxRef);
+  letRemoveClass(numberActiveSlide, 'visually-hidden', slideBoxRef);
+  letAddClass(numberActiveSlide, 'slide__box--active', slideBoxRef);
+};
+
+const btmNavHolder = () => {
+  numberActiveSlide = navSliderBtnNext(numberActiveSlide, totalSlides);
+  btmSlideHolder();
 };
 
 slideRef[0].addEventListener('click', () => {
@@ -41,36 +59,6 @@ slideRef[0].addEventListener('click', () => {
 
 slideRef[1].addEventListener('click', () => {
   numberActiveSlide = 1;
-  btmSlideHolder();
-});
-
-slideRef[2].addEventListener('click', () => {
-  numberActiveSlide = 2;
-  btmSlideHolder();
-});
-
-slideRef[3].addEventListener('click', () => {
-  numberActiveSlide = 3;
-  btmSlideHolder();
-});
-
-slideRef[4].addEventListener('click', () => {
-  numberActiveSlide = 4;
-  btmSlideHolder();
-});
-
-slideRef[5].addEventListener('click', () => {
-  numberActiveSlide = 5;
-  btmSlideHolder();
-});
-
-slideRef[6].addEventListener('click', () => {
-  numberActiveSlide = 6;
-  btmSlideHolder();
-});
-
-slideRef[7].addEventListener('click', () => {
-  numberActiveSlide = 7;
   btmSlideHolder();
 });
 
