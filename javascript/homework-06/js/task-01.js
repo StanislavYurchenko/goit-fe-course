@@ -46,13 +46,14 @@ const calculateTotalBalance = users => {
 };
 
 //task 08
-// const getUsersWithFriend = (users, friendName) => {
-//   return users.filter(user => user.friends.find(frend => frend === friendName));
-// };
+// const getUsersWithFriend = (users, friendName) =>
+//   users.filter(user => user.friends.find(frend => frend === friendName)).map(el => el.name);
 
-const getUsersWithFriend = (users, friendName) => {
-  return users.filter(({ friends }) => friends.includes(friendName));
-};
+// const getUsersWithFriend = (users, friendName) =>
+//   users.filter(({ friends }) => friends.includes(friendName)).map(el => el.name);
+
+const getUsersWithFriend = (users, friendName) =>
+  users.filter(obj => obj.friends.includes(friendName)).map(el => el.name);
 
 //task 09
 const getNamesSortedByFriendsCount = users => {
@@ -62,21 +63,27 @@ const getNamesSortedByFriendsCount = users => {
 };
 
 //task 10
+// const getSortedUniqueSkills = users => {
+//   return (
+//     users
+//       .reduce((acc, user) => {
+//         user.skills.forEach(skill => {
+//           if (!acc.includes(skill)) {
+//             acc.push(skill);
+//           }
+//         });
+//         return acc;
+//       }, [])
+//       .sort()
+//   );
+// };
+
 const getSortedUniqueSkills = users => {
-  return (
-    users
-      // .reduce((acc, user) => {
-      //   user.skills.forEach(skill => {
-      //     if (!acc.includes(skill)) {
-      //       acc.push(skill);
-      //     }
-      //   });
-      //   return acc;
-      // }, [])
-      .reduce((acc, user) => [...acc, ...user.skills], [])
-      .filter((el, index, arr) => arr.indexOf(el) === index)
-      .sort()
-  );
+  return users
+
+    .reduce((acc, user) => [...acc, ...user.skills], [])
+    .filter((el, index, arr) => arr.indexOf(el) === index)
+    .sort();
 };
 
 const buttonRef = document.getElementById('task-01-do');
