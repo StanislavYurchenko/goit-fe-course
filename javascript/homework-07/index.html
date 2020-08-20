@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Homework JS 05</title>
+    <title>Homework JS 07</title>
     <meta name="author" content="Stas Yurchenko" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="GoIT, JS, task " />
@@ -21,150 +21,116 @@
         <div class="curse">FE Advanced #21</div>
       </div>
     </header>
-    <main class="main container slider-container">
-      <h1 class="title main-title">Домашняя работа №6</h1>
-      <div class="slider">
-        <section class="task slide">
-          <div class="slide__box slide__box--active">
-            <h2 class="title">Задание</h2>
-            <div class="task__desc"></div>
-            <form class="task-01__form form">
-              <button type="button" class="button" id="task-01-do">Task 01 do</button>
-            </form>
-            <div class="task__root">
-              <ul id="categories">
-                <li class="item">
-                  <h2>Животные</h2>
-                  <ul>
-                    <li>Кот</li>
-                    <li>Хомяк</li>
-                    <li>Лошадь</li>
-                    <li>Попугай</li>
-                  </ul>
-                </li>
-                <li class="item">
-                  <h2>Продукты</h2>
-                  <ul>
-                    <li>Хлеб</li>
-                    <li>Петрушка</li>
-                    <li>Творог</li>
-                  </ul>
-                </li>
-                <li class="item">
-                  <h2>Технологии</h2>
-                  <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>React</li>
-                    <li>Node</li>
-                  </ul>
-                </li>
-              </ul>
+    <main class="main container">
+      <h1 class="title main-title">Домашняя работа №7</h1>
+      <div class="box">
+        <section class="task">
+          <h2 class="title">Задание 1</h2>
+
+          <button type="button" class="button" id="task-01-do">Task 01 do</button>
+
+          <div class="task__root">
+            <ul id="categories">
+              <li class="item">
+                <h2>Животные</h2>
+                <ul>
+                  <li>Кот</li>
+                  <li>Хомяк</li>
+                  <li>Лошадь</li>
+                  <li>Попугай</li>
+                </ul>
+              </li>
+              <li class="item">
+                <h2>Продукты</h2>
+                <ul>
+                  <li>Хлеб</li>
+                  <li>Петрушка</li>
+                  <li>Творог</li>
+                </ul>
+              </li>
+              <li class="item">
+                <h2>Технологии</h2>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>React</li>
+                  <li>Node</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="task">
+          <h2 class="title">Задание 2</h2>
+
+          <button type="button" class="button" id="task-02-do">Task 02 do</button>
+
+          <div class="task__root">
+            <ul id="ingredients"></ul>
+          </div>
+        </section>
+
+        <section class="task">
+          <h2 class="title">Задание 3</h2>
+
+          <button type="button" class="button" id="task-03-do">Task 03 do</button>
+
+          <div class="task__root">
+            <ul id="gallery"></ul>
+          </div>
+        </section>
+
+        <section class="task">
+          <h2 class="title">Задание 4</h2>
+          <div class="task__root">
+            <div id="counter">
+              <button type="button" data-action="decrement" class="button">-1</button>
+              <span id="value">0</span>
+              <button type="button" data-action="increment" class="button">+1</button>
             </div>
           </div>
         </section>
 
-        <section class="task slide">
-          <div class="slide__box slide__box--active">
-            <h2 class="title">Задание</h2>
-            <div class="task__desc"></div>
-            <form class="task-02__form form">
-              <button type="button" class="button" id="task-02-do">Task 02 do</button>
-            </form>
-            <div class="task__root">
-              <ul id="ingredients"></ul>
+        <section class="task">
+          <h2 class="title">Задание 5</h2>
+          <div class="task__root">
+            <input type="text" placeholder="Ваше имя?" id="name-input" class="form__input" />
+            <h3>Привет, <span id="name-output">незнакомец</span>!</h3>
+          </div>
+        </section>
+
+        <section class="task">
+          <h2 class="title">Задание 6</h2>
+          <div class="task__root task-06">
+            <input
+              class="validation-input form__input"
+              type="text"
+              id="validation-input"
+              data-length="6"
+              placeholder="Введи 6 символов"
+            />
+          </div>
+        </section>
+
+        <section class="task">
+          <h2 class="title">Задание 7</h2>
+          <div class="task__root task-07">
+            <input id="font-size-control" type="range" />
+            <span id="text">Абракадабра!</span>
+          </div>
+        </section>
+
+        <section class="task">
+          <h2 class="title">Задание 8</h2>
+          <div class="task__root">
+            <div id="controls">
+              <input type="number" min="0" max="100" step="1" class="form__input" />
+              <button type="button" data-action="render" class="button">Создать</button>
+              <button type="button" data-action="destroy" class="button">Очистить</button>
             </div>
-          </div>
-        </section>
-
-        <section class="task slide">
-          <div class="slide__box slide__box--active">
-            <h2 class="title">Задание</h2>
-            <div class="task__desc"></div>
-            <form class="task-03__form form">
-              <button type="button" class="button" id="task-03-do">Task 03 do</button>
-            </form>
-            <div class="task__root">
-              <ul id="gallery"></ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="task slide">
-          <div class="slide__box slide__box--active">
-            <h2 class="title">Задание</h2>
-            <div class="task__desc"></div>
-            <form class="task-04__form form">
-              <button type="button" class="button" id="task-04-do">Task 04 do</button>
-            </form>
-            <div class="task__root"></div>
-          </div>
-        </section>
-
-        <section class="task slide">
-          <div class="slide__box slide__box--active">
-            <h2 class="title">Задание</h2>
-            <div class="task__desc"></div>
-            <form class="task-05__form form">
-              <button type="button" class="button" id="task-05-do">Task 05 do</button>
-            </form>
-            <div class="task__root"></div>
-          </div>
-        </section>
-
-        <section class="task slide">
-          <div class="slide__box slide__box--active">
-            <h2 class="title">Задание</h2>
-            <div class="task__desc"></div>
-            <form class="task-06__form form">
-              <button type="button" class="button" id="task-06-do">Task 06 do</button>
-            </form>
-            <div class="task__root"></div>
-          </div>
-        </section>
-
-        <section class="task slide">
-          <div class="slide__box slide__box--active">
-            <h2 class="title">Задание</h2>
-            <div class="task__desc"></div>
-            <form class="task-07__form form">
-              <button type="button" class="button" id="task-07-do">Task 07 do</button>
-            </form>
-            <div class="task__root"></div>
-          </div>
-        </section>
-
-        <section class="task slide">
-          <div class="slide__box slide__box--active">
-            <h2 class="title">Задание</h2>
-            <div class="task__desc"></div>
-            <form class="task-08__form form">
-              <button type="button" class="button" id="task-08-do">Task 08 do</button>
-            </form>
-            <div class="task__root"></div>
-          </div>
-        </section>
-
-        <section class="task slide">
-          <div class="slide__box slide__box--active">
-            <h2 class="title">Задание</h2>
-            <div class="task__desc"></div>
-            <form class="task-09__form form">
-              <button type="button" class="button" id="task-09-do">Task 09 do</button>
-            </form>
-            <div class="task__root"></div>
-          </div>
-        </section>
-
-        <section class="task slide">
-          <div class="slide__box slide__box--active">
-            <h2 class="title">Задание</h2>
-            <div class="task__desc"></div>
-            <form class="task-10__form form">
-              <button type="button" class="button" id="task-10-do">Task 10 do</button>
-            </form>
-            <div class="task__root"></div>
+            <div id="boxes"></div>
           </div>
         </section>
       </div>
@@ -178,7 +144,5 @@
     <script src="./js/task-06.js" type="module"></script>
     <script src="./js/task-07.js" type="module"></script>
     <script src="./js/task-08.js" type="module"></script>
-    <script src="./js/task-09.js" type="module"></script>
-    <script src="./js/task-10.js" type="module"></script>
   </body>
 </html>

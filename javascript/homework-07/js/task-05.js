@@ -1,10 +1,12 @@
 'use strict';
 
-const buttonRef = document.getElementById('task-05-do');
+const nameInputRef = document.getElementById('name-input');
+const nameOutputRef = document.getElementById('name-output');
 
-const buttonHandler = () => {
-  console.log('TASK 05');
-  console.log('\n');
+nameInputRef.value = '';
+
+const nameInputHolder = () => {
+  nameOutputRef.textContent = nameInputRef.value !== '' ? nameInputRef.value : 'незнакомец';
 };
 
-buttonRef.addEventListener('click', buttonHandler);
+nameInputRef.addEventListener('input', nameInputHolder);

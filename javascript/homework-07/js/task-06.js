@@ -1,10 +1,25 @@
 'use strict';
 
-const buttonRef = document.getElementById('task-06-do');
+const inputRef = document.querySelector('#validation-input');
 
-const buttonHandler = () => {
-  console.log('TASK 06');
-  console.log('\n');
+const inputHandler = event => {
+  const isCorrect = event.target.textLength === +event.target.attributes['data-length'].value;
+  console.log(event.target.textLength);
+
+  if (isCorrect) {
+    inputRef.classList.add('validation-input-valid');
+    inputRef.classList.remove('validation-input-invalid');
+  }
+
+  if (!isCorrect) {
+    inputRef.classList.remove('validation-input-valid');
+    inputRef.classList.add('validation-input-invalid');
+  }
+
+  if (event.target.textLength === 0) {
+    inputRef.classList.remove('validation-input-valid');
+    inputRef.classList.remove('validation-input-invalid');
+  }
 };
 
-buttonRef.addEventListener('click', buttonHandler);
+inputRef.addEventListener('change', inputHandler);

@@ -1,10 +1,13 @@
 'use strict';
 
-const buttonRef = document.getElementById('task-04-do');
+const buttonIncrRef = document.querySelector('button[data-action="increment"]');
+const buttonDecrRef = document.querySelector('button[data-action="decrement"]');
+const valueRef = document.getElementById('value');
 
-const buttonHandler = () => {
-  console.log('TASK 04');
-  console.log('\n');
-};
+let counterValue = +valueRef.textContent;
 
-buttonRef.addEventListener('click', buttonHandler);
+const buttonIncrHandler = () => (valueRef.textContent = counterValue += 1);
+const buttonDecrHandler = () => (valueRef.textContent = counterValue -= 1);
+
+buttonIncrRef.addEventListener('click', buttonIncrHandler);
+buttonDecrRef.addEventListener('click', buttonDecrHandler);

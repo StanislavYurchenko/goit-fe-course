@@ -37,12 +37,12 @@
 
 img {
   display: inline-block;
-  max-width: 30%;
+  max-width: 100%;
 }
 
 .body {
   padding: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   color: rgb(144, 0, 0);
   font-size: 16px;
   letter-spacing: 0.01rem;
@@ -68,6 +68,13 @@ img {
 
 .task {
   border-radius: 5px;
+  border: 2px solid rgb(144, 0, 0);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.task:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .title {
@@ -89,14 +96,17 @@ img {
   color: rgb(144, 0, 0);
   border-radius: 5px;
 }
+
 .button {
-  padding: 5px;
+  display: inline-block;
+  padding: 5px 30px;
   border-radius: 5px;
   cursor: pointer;
   background-color: wheat;
   border: 2px solid rgb(144, 0, 0);
   color: rgb(144, 0, 0);
   transition: all 0.5s ease-out;
+  text-align: center;
 }
 
 .button:hover {
@@ -104,7 +114,62 @@ img {
   color: wheat;
 }
 
-.code {
-  font-family: monospace;
-  font-size: 12px;
+.button:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+/* TASK 03 */
+#gallery {
+  margin: 0px;
+  padding: 5px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#gallery li {
+  display: inline-block;
+  width: 30%;
+}
+
+/* TASK 4 */
+
+/* TASK 6 */
+.validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+.task-06 .validation-input-valid {
+  border-color: #4caf50;
+}
+
+.task-06 .validation-input-invalid {
+  border-color: #f44336;
+}
+
+/* TASK 7*/
+
+.task-07 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: column;
+}
+
+.task-07 span {
+  height: 35px;
+}
+
+/* TASK 8 */
+.task__root {
+  overflow: hidden;
+}
+
+.task__root div:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+#boxes * {
+  margin-right: 5px;
 }

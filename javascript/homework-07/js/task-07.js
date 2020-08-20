@@ -1,10 +1,14 @@
 'use strict';
 
-const buttonRef = document.getElementById('task-07-do');
+const inputFontSizeRef = document.querySelector('#font-size-control');
 
-const buttonHandler = () => {
-  console.log('TASK 07');
-  console.log('\n');
+inputFontSizeRef.min = 0;
+inputFontSizeRef.max = 30;
+inputFontSizeRef.defaultValue = 16;
+inputFontSizeRef.nextElementSibling.setAttribute('style', `font-size: ${inputFontSizeRef.value}px`);
+
+const inputFontSizeHandler = event => {
+  event.target.nextElementSibling.setAttribute('style', `font-size: ${event.target.value}px`);
 };
 
-buttonRef.addEventListener('click', buttonHandler);
+inputFontSizeRef.addEventListener('change', inputFontSizeHandler);
