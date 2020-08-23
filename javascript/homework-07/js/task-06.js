@@ -4,7 +4,6 @@ const inputRef = document.querySelector('#validation-input');
 
 const inputHandler = event => {
   const isCorrect = event.target.textLength === +event.target.attributes['data-length'].value;
-  console.log(event.target.textLength);
 
   if (isCorrect) {
     inputRef.classList.add('validation-input-valid');
