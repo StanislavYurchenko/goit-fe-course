@@ -3,7 +3,7 @@
 const inputRef = document.querySelector('#validation-input');
 
 const inputHandler = event => {
-  const isCorrect = event.target.textLength === +event.target.attributes['data-length'].value;
+  const isCorrect = event.target.textLength === +event.target.dataset.length;
 
   if (isCorrect) {
     inputRef.classList.add('validation-input-valid');
@@ -21,4 +21,4 @@ const inputHandler = event => {
   }
 };
 
-inputRef.addEventListener('change', inputHandler);
+inputRef.addEventListener('input', inputHandler);
