@@ -36,7 +36,7 @@
 }
 
 img {
-  display: inline-block;
+  display: block;
   max-width: 100%;
 }
 
@@ -96,34 +96,19 @@ img {
 
 /* NEW */
 
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
 .task {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* min-height: 100vh; */
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-    'Helvetica Neue', sans-serif;
+  font-family: sans-serif;
   background-color: #fff;
   color: #212121;
 }
 
 .gallery {
   display: grid;
-  /* width: 1200px; */
-  /* grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); */
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-auto-rows: 240px; */
   grid-gap: 12px;
   padding: 0;
   margin: 0;
