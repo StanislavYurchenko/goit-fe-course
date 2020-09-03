@@ -13,7 +13,6 @@ init();
 
 const currentTheme = () => (ref.switchInput.checked ? Theme.DARK : Theme.LIGHT);
 
-// ref.switchInput.addEventListener('click', switchInputHandler);
 ref.switchInput.addEventListener('change', switchInputHandler);
 
 document.addEventListener('visibilitychange', changeTheme);
