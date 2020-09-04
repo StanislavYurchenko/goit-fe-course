@@ -1,0 +1,95 @@
+.container {
+  min-width: 250px;
+  margin: 0 auto;
+}
+
+* {
+  /* outline: 1px solid blue; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.body {
+  padding: 10px;
+  font-family: sans-serif;
+  color: rgb(144, 0, 0);
+  font-size: 16px;
+  letter-spacing: 0.01rem;
+}
+.main {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.header-container {
+  border: 2px solid rgb(238, 221, 221);
+  border-radius: 5px;
+  padding: 5px;
+  background-color: cornsilk;
+  margin-bottom: 1px;
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task {
+  border-radius: 5px;
+  border: 2px solid rgb(144, 0, 0);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: wheat;
+  border: 2px solid rgb(144, 0, 0);
+  color: rgb(144, 0, 0);
+  transition: all 0.5s ease-out;
+  text-align: center;
+}
+
+.button:hover:not(:disabled) {
+  background-color: rgb(144, 0, 0);
+  color: wheat;
+}
+
+.button:disabled {
+  background-color: rgb(143, 123, 86);
+  cursor: auto;
+}
+
+.button:not(:last-child) {
+  margin-bottom: 5px;
+}
