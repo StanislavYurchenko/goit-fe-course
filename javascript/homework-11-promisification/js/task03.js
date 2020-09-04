@@ -42,11 +42,6 @@ doButtonRef.addEventListener('click', doButtonHolder);
 
 function doButtonHolder() {
   console.log('--- task 3 ---');
-  //   makeTransaction1({ id: 70, amount: 150 }, logSuccess, logError);
-  //   makeTransaction1({ id: 71, amount: 230 }, logSuccess, logError);
-  //   makeTransaction1({ id: 72, amount: 75 }, logSuccess, logError);
-  //   makeTransaction1({ id: 73, amount: 100 }, logSuccess, logError);
-
   makeTransaction({ id: 70, amount: 150 }).then(logSuccess).catch(logError);
   makeTransaction({ id: 71, amount: 230 }).then(logSuccess).catch(logError);
   makeTransaction({ id: 72, amount: 75 }).then(logSuccess).catch(logError);
