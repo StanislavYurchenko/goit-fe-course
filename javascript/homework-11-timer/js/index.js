@@ -1,104 +1,54 @@
 'use strict';
 
-import galleryItems from './gallery-items.js';
+class CountdownTimer {
+  constructor(selector, targetDate) {
+    this.selector = document.querySelector(selector);
+    this.targetDate = new Date(targetDate);
+  }
 
-const galleryRef = document.querySelector('.js-gallery');
-const lightboxRef = document.querySelector('.js-lightbox');
-const lightboxImageRef = document.querySelector('.lightbox__image');
-const lightboxBtnRef = document.querySelector('.lightbox__button');
-const lightboxContentRef = document.querySelector('.lightbox__content');
+  ref = {
+    days: document.querySelector('span[data-value = days]'),
+    hours: document.querySelector('span[data-value = hours]'),
+    mins: document.querySelector('span[data-value = mins]'),
+    secs: document.querySelector('span[data-value = secs]'),
+  };
 
-const quantityGalleryItems = galleryItems.length;
-const isLightboxHide = () => lightboxRef.className.indexOf('is-open') === -1;
+  getTimeNow() {
+    return new Date();
+  }
 
-let indexActiveImage;
+  getTimeLeft() {
+    return this.targetDate.getTime() - this.getTimeNow();
+  }
 
-galleryRef.append(...createGalleryItems());
+  getDaysLeft() {
+    return Math.floor(this.getTimeLeft() / (1000 * 60 * 60 * 24));
+  }
 
-galleryRef.addEventListener('click', galleryHandler);
-lightboxBtnRef.addEventListener('click', lightboxBtnHandler);
-lightboxContentRef.addEventListener('click', lightboxContentHandler);
-lightboxRef.addEventListener('transitionend', cleanImageSrc);
-document.addEventListener('keydown', navigationInLightbox);
+  getHoursLeft() {
+    return Math.floor(
+      (this.getTimeLeft() % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+    );
+  }
 
-function galleryHandler(event) {
-  event.preventDefault();
+  getMinsLeft() {
+    return Math.floor((this.getTimeLeft() % (1000 * 60 * 60)) / (1000 * 60));
+  }
 
-  event.currentTarget.childNodes.forEach((el, i) => {
-    if (el.firstChild.firstChild === event.target) {
-      indexActiveImage = i;
-      showLightbox();
-    }
-  });
-}
+  getSecsLeft() {
+    return Math.floor((this.getTimeLeft() % (1000 * 60)) / 1000);
+  }
 
-function lightboxBtnHandler() {
-  hideLightbox();
-}
-
-function lightboxContentHandler(event) {
-  if (event.target === event.currentTarget) {
-    hideLightbox();
+  render() {
+    setInterval(() => {
+      this.ref.days.textContent = this.getDaysLeft();
+      this.ref.hours.textContent = this.getHoursLeft();
+      this.ref.mins.textContent = this.getMinsLeft();
+      this.ref.secs.textContent = this.getSecsLeft();
+    }, 1000);
   }
 }
 
-function cleanImageSrc() {
-  if (isLightboxHide()) {
-    lightboxImageRef.setAttribute('src', '');
-    lightboxImageRef.setAttribute('alt', '');
-  }
-}
+const timer = new CountdownTimer('#timer-1', 'Sep 10, 2020 00:00:00');
 
-function navigationInLightbox(event) {
-  if (event.code === 'Escape' && !isLightboxHide()) {
-    hideLightbox();
-  }
-
-  if ((event.code === 'ArrowLeft' || event.code === 'ArrowUp') && !isLightboxHide()) {
-    indexActiveImage = indexActiveImage <= 0 ? quantityGalleryItems - 1 : (indexActiveImage -= 1);
-    showLightbox();
-  }
-
-  if ((event.code === 'ArrowDown' || event.code === 'ArrowRight') && !isLightboxHide()) {
-    indexActiveImage = indexActiveImage >= quantityGalleryItems - 1 ? 0 : (indexActiveImage += 1);
-    showLightbox();
-  }
-}
-
-function showLightbox() {
-  const src = galleryItems[indexActiveImage].original;
-  const alt = galleryItems[indexActiveImage].description;
-
-  lightboxImageRef.setAttribute('src', src);
-  lightboxImageRef.setAttribute('alt', alt);
-  lightboxRef.classList.add('is-open');
-}
-
-function hideLightbox() {
-  lightboxRef.classList.remove('is-open');
-}
-
-function createGalleryItems() {
-  const items = [];
-
-  for (let i = 0; i < quantityGalleryItems; i += 1) {
-    items[i] = document.createElement('li');
-    items[i].classList.add('gallery__item');
-  }
-
-  items.forEach((el, i) => {
-    const a = document.createElement('a');
-    const img = document.createElement('img');
-    a.setAttribute('href', galleryItems[i].preview);
-    a.classList.add('gallery__link');
-    el.append(a);
-
-    img.setAttribute('src', galleryItems[i].preview);
-    img.setAttribute('alt', galleryItems[i].description);
-    img.dataset.source = galleryItems[i].original;
-    img.classList.add('slider__dot-img');
-    el.firstChild.append(img);
-  });
-
-  return items;
-}
+timer.render();
