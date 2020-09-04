@@ -19,24 +19,18 @@ const makeTransaction1 = (transaction, onSuccess, onError) => {
 };
 
 const makeTransaction = transaction => {
-  const delay = randomIntegerFromInterval(200, 500);
-
   return new Promise((res, rej) => {
     const delay = randomIntegerFromInterval(200, 500);
 
     setTimeout(() => {
-      const canProcess = Math.random() > 0.3;
-
-      if (canProcess) {
-        res(transaction.id, delay);
-      } else {
-        rej(transaction.id);
-      }
+      Math.random() > 0.3
+        ? res({ id: transaction.id, time: delay })
+        : rej(transaction.id);
     }, delay);
   });
 };
 
-const logSuccess = (id, time) => {
+const logSuccess = ({ id, time }) => {
   console.log(`Transaction ${id} processed in ${time}ms`);
 };
 
