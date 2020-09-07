@@ -36,10 +36,13 @@ body {
 
 .country__item {
   width: 300px;
-  padding: 6px;
   transition: all 0.3s linear;
   display: flex;
   align-items: center;
+}
+
+.country__item:not(:last-child) {
+  // margin-bottom: 10px;
 }
 
 .country__item:hover {
