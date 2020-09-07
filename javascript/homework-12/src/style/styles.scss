@@ -1,0 +1,131 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  background-color: navajowhite;
+  color: brown;
+}
+
+.title {
+  font-size: 24px;
+  margin: 0 0 20px;
+}
+
+.input {
+  color: brown;
+  font-size: 20px;
+  padding: 5px;
+  border: 1px brown solid;
+  border-radius: 6px;
+}
+
+.countries {
+  padding: 16px 0 16px 0;
+  list-style: none;
+  margin: 0;
+  font-size: 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.country__item {
+  width: 300px;
+  padding: 6px;
+  transition: all 0.3s linear;
+  display: flex;
+  align-items: center;
+}
+
+.country__item:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  scale: 1.005;
+}
+
+.country__link {
+  color: brown;
+  display: flex;
+  padding: 3px 0;
+  text-decoration: none;
+  align-items: center;
+}
+
+.country {
+  width: 100%;
+}
+
+.country__box {
+  border: 1px brown solid;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+
+.country__box--left {
+  margin-right: 20px;
+}
+
+.country__box--right {
+}
+
+.country__flag {
+  display: block;
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.country__flag--active {
+  width: 200px;
+  height: auto;
+  margin: 10px 0;
+}
+
+.country__name {
+  margin: 0;
+  text-decoration: none;
+}
+
+.country__name--active {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.country__capital {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.country__region {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.country__population {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.country__languages {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.country__language {
+  font-size: 16px;
+}
+
+.country__area {
+  font-size: 16px;
+}
+
+.country__area span {
+  font-size: 16px;
+}
