@@ -23,9 +23,11 @@ function countriesHolder(event) {
 
   if (event.target !== event.currentTarget) {
     const inputValue = event.target.parentElement.textContent.trim();
-    fetchCountries(inputValue).then(countries => {
-      countryMarkup(countries);
-    });
+    fetchCountries(inputValue)
+      .then(countries => {
+        countryMarkup(countries);
+      })
+      .catch(err => error(err));
   }
 }
 
@@ -34,11 +36,16 @@ function inputHandler(event) {
   clearBeforeMarkup();
   clearCountry();
   if (!inputValue) return;
-  fetchCountries(inputValue).then(countries => {
-    if (countries.length >= 10) {
-      error(message);
-      return;
-    }
-    countriesMarkup(countries);
-  });
+  fetchCountries(inputValue)
+    .then(countries => {
+      if (countries.length >= 10) {
+        error(message);
+      }
+      if (countries.message) {
+        error(countries.message);
+        return;
+      }
+      countriesMarkup(countries);
+    })
+    .catch(err => error(err));
 }
