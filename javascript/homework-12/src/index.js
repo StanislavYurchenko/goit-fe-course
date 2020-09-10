@@ -40,6 +40,7 @@ function inputHandler(event) {
     .then(countries => {
       if (countries.length >= 10) {
         error(message);
+        return;
       }
       if (countries.message) {
         error(countries.message);
