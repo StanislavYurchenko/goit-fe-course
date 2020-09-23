@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Home work java script 13</title>
-    <!-- <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script> -->
   </head>
 
   <body>
     <form class="search-form" id="search-form">
       <input
+        class="search-form__input"
         type="text"
         name="query"
         autocomplete="off"
         placeholder="Search images..."
       />
-      <button class="search button" type="submit">search</button>
+      <button class="search button search-form__button" type="submit">
+        search
+      </button>
     </form>
 
     <ul class="gallery list container"></ul>
-    <button class="load-more button" type="button">load more</button>
+
+    <button class="load-more button visually-hidden" type="button">
+      load more
+    </button>
   </body>
 </html>

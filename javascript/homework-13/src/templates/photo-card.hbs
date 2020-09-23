@@ -1,9 +1,12 @@
 {{#each this}}
-<li class="photo-card item post">
-      <img class="photo-img" src="{{webformatURL}}" alt="{{tags}}" width="{{webformatWidth}}"
+<li class="photo-card item">
+
+      <img class="photo-card__img" src="{{webformatURL}}" alt="{{tags}}" width="{{webformatWidth}}"
             height="{{webformatHeight}}" />
 
-      <ul class=" stats list">
+
+
+      <ul class="photo-card__stats stats list">
             <li class="stats-item item">
                   <i class="material-icons md-18">thumb_up</i>
                   {{likes}}
