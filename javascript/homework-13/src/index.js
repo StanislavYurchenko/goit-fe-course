@@ -11,7 +11,7 @@ let page = 1;
 
 const observerCallbackOptions = {
   root: null,
-  rootMargin: '100px',
+  rootMargin: '-20px',
   threshold: 0.5,
 };
 
