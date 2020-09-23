@@ -65,9 +65,11 @@ function observerCallback(entries) {
     }
   });
 }
+
 function showShowMoreBtn() {
   refs.loadMoreBtn.classList.remove('visually-hidden');
 }
+
 function hideShowMoreBtn() {
   refs.loadMoreBtn.classList.add('visually-hidden');
 }
