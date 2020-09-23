@@ -85,7 +85,10 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   transform: scale(1.01);
 }
-
+.photo-card__img-box {
+  width: 100%;
+  height: 100%;
+}
 .photo-card__img {
   object-fit: cover;
 }
