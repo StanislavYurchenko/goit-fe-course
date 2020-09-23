@@ -11,7 +11,7 @@ let page = 1;
 
 const observerCallbackOptions = {
   root: null,
-  rootMargin: '50px',
+  rootMargin: '100px',
   threshold: 0.5,
 };
 
@@ -31,7 +31,11 @@ function formHandler(event) {
   quest = event.currentTarget.elements.query.value;
   page = 1;
   markupDestroy(refs.gallery);
-  fetchApi(quest, page).then(galleryMarkup).then(showShowMoreBtn());
+  fetchApi(quest, page)
+    .then(galleryMarkup)
+    .then(() => {
+      isGalleryEmpty() ? hideShowMoreBtn() : showShowMoreBtn();
+    });
   refs.form.reset();
 }
 
@@ -63,6 +67,9 @@ function observerCallback(entries) {
 }
 function showShowMoreBtn() {
   refs.loadMoreBtn.classList.remove('visually-hidden');
+}
+function hideShowMoreBtn() {
+  refs.loadMoreBtn.classList.add('visually-hidden');
 }
 
 function isGalleryEmpty() {
