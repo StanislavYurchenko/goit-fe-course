@@ -1,0 +1,15 @@
+<ul class="news__list">
+      {{#each this}}
+      <li class="news__item">
+            <h3 class="news__title">{{title}}</h3>
+            <div class="news__date">дата:{{date}}</div>
+            <div class="news__category">категория: {{category}}</div>
+            <div class="news__article">{{article}}</div>
+            <ul class="news__comment-list">
+                  {{#each comments}}
+                  <li class="news__comment-item">{{comment}}</li>
+                  {{/each}}
+            </ul>
+      </li>
+      {{/each}}
+</ul>

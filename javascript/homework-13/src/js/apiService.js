@@ -10,8 +10,10 @@ const perPage = 12;
 
 export default function fetchApi(q, page) {
   const request = `${baseUrl}?key=${API_KEY}&q=${q}&image_type=${imageType}&lang=${lang}&page=${page}&per_page=${perPage}&orientation=${orientation}`;
-
-  return fetch(request)
+  // pixabay.com/api/docs/
+  // https://pixabay.com/api/?key=18376090-d7378f6abd5315284a04e80ad&q=red&image_type=photo&lang=en&page=1&per_page=12
+  // https://codepen.io/desandro/pen/JJNNqP
+  https: return fetch(request)
     .then(responseJson => responseJson.json())
     .then(response => {
       if (response.total > 0 && page === 1) {
