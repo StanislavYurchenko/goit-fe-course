@@ -19,12 +19,12 @@ ref.form.addEventListener('submit', formHolder);
 
 function formHolder(event) {
   initForm(event);
-  ref.outputSelect.removeEventListener('change', selectHolder);
+  // ref.outputSelect.removeEventListener('change', selectHolder);
 
   const fullName = getFullName(event).trim();
   localStorage.setItem('fullName', fullName);
 
-  markupGrit(fullName);
+  markupGreet(fullName);
   markupSelect();
 
   ref.form.reset();
@@ -75,7 +75,7 @@ function initForm(event) {
 function init() {
   if (localStorage.getItem('fullName')) {
     const fullName = localStorage.getItem('fullName');
-    markupGrit(fullName);
+    markupGreet(fullName);
     markupSelect();
 
     ref.outputSelect.addEventListener('change', selectHolder);
@@ -89,7 +89,7 @@ function init() {
   }
 }
 
-function markupGrit(name) {
+function markupGreet(name) {
   const messageMarkup = `<div class="user-name">добро пожаловать ${
     name || 'аноним'
   } </div>`;
