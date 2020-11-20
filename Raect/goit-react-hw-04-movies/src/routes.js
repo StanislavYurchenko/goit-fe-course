@@ -1,12 +1,5 @@
 import { lazy } from 'react';
 
-const routes = {
-  home: '/',
-  movies: '/movies',
-  movieDetails: '/movies/:movieId',
-  cast: '/movies/:movieId/cast',
-};
-
 const routesMain = [
   {
     path: '/',
@@ -51,4 +44,4 @@ const routesDetailPage = [
   },
 ];
 
-export { routesMain, routesDetailPage, routes };
+export { routesMain, routesDetailPage };
