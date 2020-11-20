@@ -1,29 +1,20 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import routes from "../../routes";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { routesMain } from '../../routes';
 
 const Navigation = () => (
   <nav>
     <ul>
-      <li>
-        <NavLink
-          to={routes.home}
-          className="Nav-link"
-          activeClassName="Nav-link-active"
-          exact
-        >
-          HomePage
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to={routes.movies}
-          className="Nav-link"
-          activeClassName="Nav-link-active"
-        >
-          MoviesPage
-        </NavLink>
-      </li>
+      {routesMain.map(
+        (route, index) =>
+          index < 2 && (
+            <li key={route.label}>
+              <NavLink to={route.path} className="Nav-link" activeClassName="Nav-link-active" exact>
+                {route.label}
+              </NavLink>
+            </li>
+          ),
+      )}
     </ul>
   </nav>
 );

@@ -1,14 +1,8 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Route, Switch } from "react-router-dom";
-import routes from "../../routes";
-import {
-  gethMovieDetailsById,
-  BASE_URL_POSTER,
-} from "../../servises/themoviedbApi";
-
-import Cast from "../../views/Cast/Cast";
-import Reviews from "../../views/Reviews/Reviews";
+import React, { Component, lazy, Suspense } from 'react';
+import { Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import { routesMain, routesDetailPage } from '../../routes';
+import { gethMovieDetailsById, BASE_URL_POSTER } from '../../services/themoviedbApi';
 
 class MovieDetailsPage extends Component {
   state = {
@@ -19,37 +13,56 @@ class MovieDetailsPage extends Component {
 
   componentDidMount = () => {
     const { match } = this.props;
-    const { movieId } = match.params;
+    if (match) {
+      const { movieId } = match.params;
+      gethMovieDetailsById(movieId).then(res => this.setState({ movie: res }));
+    }
+  };
 
-    gethMovieDetailsById(movieId).then((res) => this.setState({ movie: res }));
+  onGoBack = () => {
+    const {
+      history,
+      location: { state },
+    } = this.props;
+
+    if (state && state.from) {
+      history.push(state.from);
+      return;
+    }
+
+    const pathToMoviePage = routesMain.find(route => route.label === 'MoviesPage').path;
+    history.push(pathToMoviePage);
   };
 
   render() {
     const { match } = this.props;
-    const { movieId } = match.params;
     const { movie } = this.state;
 
     return (
       movie && (
-        <>
-          <h2> MovieDetailsPage id={movieId}</h2>
-          <h3>{movie.title}</h3>
+        <section>
+          <h2> MovieDetailsPage</h2>
+          <h2>{movie.title}</h2>
           <div>{movie.release_date}</div>
-          <img
-            src={`${BASE_URL_POSTER}${movie.poster_path}`}
-            alt={movie.title}
-            width="150"
-          />
+          <img src={`${BASE_URL_POSTER}${movie.poster_path}`} alt={movie.title} width="150" />
           <br></br>
-          <Link to={`${match.url}/cast`}>cast</Link>
+          {routesDetailPage.map(route => (
+            <Link key={route.label} to={`${match.url}${route.path}`}>
+              {route.label}
+            </Link>
+          ))}
           <br></br>
-          <Link to={`${match.url}/reviews`}>reviews</Link>
-
-          <Switch>
-            <Route path={`${match.path}/cast`} component={Cast} />
-            <Route path={`${match.path}/reviews`} component={Reviews} />
-          </Switch>
-        </>
+          <button type="button" onClick={this.onGoBack}>
+            Go back
+          </button>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Switch>
+              {routesDetailPage.map(route => (
+                <Route key={route.label} {...route} path={`${match.path}${route.path}`} />
+              ))}
+            </Switch>
+          </Suspense>
+        </section>
       )
     );
   }

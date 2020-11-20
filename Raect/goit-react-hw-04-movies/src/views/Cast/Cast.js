@@ -1,8 +1,5 @@
-import React, { Component } from "react";
-import {
-  getCastsByMovieId,
-  BASE_URL_POSTER,
-} from "../../servises/themoviedbApi";
+import React, { Component } from 'react';
+import { getCastsByMovieId, BASE_URL_POSTER } from '../../services/themoviedbApi';
 
 class Cast extends Component {
   state = {
@@ -13,7 +10,7 @@ class Cast extends Component {
   componentDidMount = () => {
     const { match } = this.props;
     const { movieId } = match.params;
-    getCastsByMovieId(movieId).then((res) => this.setState({ cast: res.cast }));
+    getCastsByMovieId(movieId).then(res => this.setState({ cast: res.cast }));
   };
 
   render() {
@@ -28,11 +25,7 @@ class Cast extends Component {
               return (
                 <li key={actor.id + id}>
                   <h4>{actor.name}</h4>
-                  <img
-                    src={`${BASE_URL_POSTER}${actor.profile_path}`}
-                    alt={actor.name}
-                    width={100}
-                  />
+                  <img src={`${BASE_URL_POSTER}${actor.profile_path}`} alt={actor.name} width={100} />
                 </li>
               );
             })}

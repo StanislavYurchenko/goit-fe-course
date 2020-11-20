@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { getUserReviewsAboutFilmById } from "../../servises/themoviedbApi";
+import { getUserReviewsAboutFilmById } from '../../services/themoviedbApi';
 
 class Reviews extends Component {
   state = {
@@ -15,7 +15,7 @@ class Reviews extends Component {
     const { movieId } = match.params;
     const { page } = this.state;
 
-    getUserReviewsAboutFilmById(movieId, page).then((res) => {
+    getUserReviewsAboutFilmById(movieId, page).then(res => {
       console.log(res.results);
       this.setState({ reviews: res.results });
     });

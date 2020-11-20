@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function NotFound() {
   return (
-    <>
-      <h2> вы потерялись </h2>
+    <section>
+      <h2> page not found </h2>
       <p>
-        <Link>Ссылка</Link>
-        на главную страницу
+        <Link>link</Link>
+        to main screen
       </p>
-    </>
+    </section>
   );
 }
 

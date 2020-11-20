@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { searchMoviesByKeyword, popularFetch } from '../../servises/themoviedbApi';
+import { searchMoviesByKeyword, popularFetch } from '../../services/themoviedbApi';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import parseQueryString from '../../utils/parseQueryString';
 
@@ -15,7 +15,8 @@ class MoviesPage extends Component {
     const { location } = this.props;
     const { userQuery } = parseQueryString(location.search);
     if (userQuery) {
-      searchMoviesByKeyword(userQuery, 1).then(res => this.setState({ searchList: res.results }));
+      this.searchMovie(userQuery, 1);
+      return;
     }
     if (!userQuery) {
       popularFetch(1).then(res => this.setState({ searchList: res.results }));
@@ -29,8 +30,12 @@ class MoviesPage extends Component {
     const { userQuery: nextQuery } = parseQueryString(location.search);
 
     if (prevQuery !== nextQuery) {
-      searchMoviesByKeyword(nextQuery, 1).then(res => this.setState({ searchList: res.results }));
+      this.searchMovie(nextQuery, 1);
     }
+  };
+
+  searchMovie = (query, page) => {
+    searchMoviesByKeyword(query, page).then(res => this.setState({ searchList: res.results }));
   };
 
   onChangeQuery = query => {
@@ -48,13 +53,15 @@ class MoviesPage extends Component {
     return (
       <>
         <SearchBox onSubmit={this.onChangeQuery} />
-        <h2> MoviesPage</h2>
+        <h2>MoviesPage</h2>
         {searchList.length > 0 && (
           <ul>
             {searchList.map(({ id, original_title, original_name }) => {
               return (
                 <li key={id}>
-                  <Link to={`${match.url}/${id}`}>{original_title || original_name}</Link>
+                  <Link to={{ pathname: `${match.url}/${id}`, state: { from: this.props.location } }}>
+                    {original_title || original_name}
+                  </Link>
                 </li>
               );
             })}
