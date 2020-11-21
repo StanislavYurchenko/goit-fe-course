@@ -4,7 +4,6 @@ import { routesMain } from '../../routes';
 import Layout from '../Layout/Layout';
 
 const App = () => {
-  console.log(routesMain);
   return (
     <Layout>
       <Suspense fallback={<div>Loading...</div>}>
