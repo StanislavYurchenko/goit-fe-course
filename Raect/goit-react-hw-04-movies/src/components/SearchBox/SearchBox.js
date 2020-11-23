@@ -37,7 +37,7 @@ class SearchBox extends Component {
 }
 
 SearchBox.propTypes = {
-  onSubmit: PropTypes.func,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default SearchBox;
