@@ -1,6 +1,6 @@
 import React, { Component, Suspense } from 'react';
-import { Link } from 'react-router-dom';
-import { Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { routesMain, routesDetailPage } from '../../routes';
 import { gethMovieDetailsById, BASE_URL_POSTER } from '../../services/themoviedbApi';
 
@@ -67,5 +67,12 @@ class MovieDetailsPage extends Component {
     );
   }
 }
+
+// HOW TO DO THIS CORRECT??????????????
+MovieDetailsPage.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
+};
 
 export default MovieDetailsPage;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { searchMoviesByKeyword, popularFetch } from '../../services/themoviedbApi';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import parseQueryString from '../../utils/parseQueryString';
@@ -71,5 +72,12 @@ class MoviesPage extends Component {
     );
   }
 }
+
+// HOW TO DO THIS CORRECT??????????????
+MoviesPage.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
+};
 
 export default MoviesPage;

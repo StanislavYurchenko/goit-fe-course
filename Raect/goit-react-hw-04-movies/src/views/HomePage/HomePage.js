@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { popularFetch } from '../../services/themoviedbApi';
 import { routesMain } from '../../routes';
 
@@ -38,5 +39,12 @@ class HomePage extends Component {
     );
   }
 }
+
+// HOW TO DO THIS CORRECT??????????????
+HomePage.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
+};
 
 export default HomePage;

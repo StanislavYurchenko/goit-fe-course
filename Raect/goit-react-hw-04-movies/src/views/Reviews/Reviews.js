@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import { getUserReviewsAboutFilmById } from '../../services/themoviedbApi';
 
 class Reviews extends Component {
@@ -16,7 +16,6 @@ class Reviews extends Component {
     const { page } = this.state;
 
     getUserReviewsAboutFilmById(movieId, page).then(res => {
-      console.log(res.results);
       this.setState({ reviews: res.results });
     });
   };
@@ -44,5 +43,12 @@ class Reviews extends Component {
     );
   }
 }
+
+// HOW TO DO THIS CORRECT??????????????
+Reviews.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
+};
 
 export default Reviews;

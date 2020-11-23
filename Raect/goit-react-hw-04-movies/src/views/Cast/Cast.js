@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { getCastsByMovieId, BASE_URL_POSTER } from '../../services/themoviedbApi';
 
 class Cast extends Component {
@@ -15,7 +16,6 @@ class Cast extends Component {
 
   render() {
     const { cast } = this.state;
-
     return (
       <>
         <h2> Cast </h2>
@@ -35,5 +35,12 @@ class Cast extends Component {
     );
   }
 }
+
+// HOW TO DO THIS CORRECT??????????????
+Cast.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
+};
 
 export default Cast;

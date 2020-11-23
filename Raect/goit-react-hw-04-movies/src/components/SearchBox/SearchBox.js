@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class SearchBox extends Component {
   state = {
@@ -17,7 +18,7 @@ class SearchBox extends Component {
   onSubmit = event => {
     event.preventDefault();
     const { userQuery } = this.state;
-    const { onSubmit, history } = this.props;
+    const { onSubmit } = this.props;
     onSubmit(userQuery);
     this.setState({ userQuery: '' });
 
@@ -26,6 +27,7 @@ class SearchBox extends Component {
 
   render() {
     const { userQuery } = this.state;
+    console.log('qwe', this.props);
     return (
       <form onSubmit={this.onSubmit}>
         <input type="text" name="userQuery" onChange={this.onChange} value={userQuery} placeholder="Search movies" />
@@ -34,5 +36,9 @@ class SearchBox extends Component {
     );
   }
 }
+
+SearchBox.propTypes = {
+  onSubmit: PropTypes.func,
+};
 
 export default SearchBox;
