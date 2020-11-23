@@ -27,7 +27,6 @@ class SearchBox extends Component {
 
   render() {
     const { userQuery } = this.state;
-    console.log('qwe', this.props);
     return (
       <form onSubmit={this.onSubmit}>
         <input type="text" name="userQuery" onChange={this.onChange} value={userQuery} placeholder="Search movies" />
