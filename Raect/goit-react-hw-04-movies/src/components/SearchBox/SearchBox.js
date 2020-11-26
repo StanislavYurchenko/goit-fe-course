@@ -21,7 +21,6 @@ class SearchBox extends Component {
     const { onSubmit } = this.props;
     onSubmit(userQuery);
     this.setState({ userQuery: '' });
-
     this.formReset();
   };
 
