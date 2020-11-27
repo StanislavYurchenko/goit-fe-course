@@ -1,6 +1,7 @@
 import React, { Component, Suspense } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import isImage from 'is-image';
 import NotFound from '../../views/NotFound/NotFound';
 import { routesMain, routesDetailPage } from '../../routes';
 import {
@@ -14,6 +15,7 @@ class MovieDetailsPage extends Component {
     movie: null,
     error: false,
     loading: false,
+    imagePath: noImage,
   };
 
   componentDidMount = () => {
@@ -29,6 +31,17 @@ class MovieDetailsPage extends Component {
           console.log('error', error);
           this.setState({ error: true });
         });
+    }
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    const prevMovie = prevState.movie;
+    const { movie, error } = this.state;
+
+    if (prevMovie !== movie && !error) {
+      const path = `${BASE_URL_POSTER}${movie.poster_path}`;
+      const imgPath = isImage(path) ? path : noImage;
+      this.setState({ imagePath: imgPath });
     }
   };
 
@@ -51,24 +64,14 @@ class MovieDetailsPage extends Component {
 
   render() {
     const { match } = this.props;
-    const { movie, error } = this.state;
-
-    // const poster = new Image();
-    // poster.src = `${BASE_URL_POSTER}${movie.poster_path}`;
-
-    // console.log(poster);
+    const { movie, error, imagePath } = this.state;
 
     return movie && !error ? (
       <section>
         <h2> MovieDetailsPage</h2>
         <h2>{movie.title}</h2>
         <div>{movie.release_date}</div>
-        <img
-          // src={noImage}
-          src={`${BASE_URL_POSTER}${movie.poster_path}`}
-          alt={movie.title}
-          width="150"
-        />
+        <img src={imagePath} alt={movie.title} width="150" />
         <br></br>
         {routesDetailPage.map(route => (
           <Link key={route.label} to={`${match.url}${route.path}`}>
