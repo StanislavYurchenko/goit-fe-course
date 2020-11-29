@@ -1,5 +1,6 @@
 import React from 'react';
 import Pagination from 'react-bootstrap/Pagination';
+import PropTypes from 'prop-types';
 
 function MoviePagination(props) {
   const {
@@ -114,5 +115,13 @@ function MoviePagination(props) {
     </div>
   );
 }
+
+MoviePagination.propTypes = {
+  increaseCurrentPage: PropTypes.func.isRequired,
+  currentPage: PropTypes.number.isRequired,
+  decreaseCurrentPage: PropTypes.func.isRequired,
+  total_pages: PropTypes.number.isRequired,
+  setCurrentPage: PropTypes.func.isRequired,
+};
 
 export default MoviePagination;
