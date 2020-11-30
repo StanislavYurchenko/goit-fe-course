@@ -53,13 +53,6 @@ class HomePage extends Component {
       ...location,
       search: `currentPage=${+currentPage + number}`,
     });
-
-    // this.setState(({ currentPage, total_pages }) => {
-    //   return {
-    //     currentPage:
-    //       currentPage < total_pages ? currentPage + number : currentPage,
-    //   };
-    // });
   };
 
   decreaseCurrentPage = (number = 1) => {
@@ -69,12 +62,6 @@ class HomePage extends Component {
       ...location,
       search: `currentPage=${+currentPage + number}`,
     });
-
-    // this.setState(({ currentPage }) => {
-    //   return {
-    //     currentPage: currentPage > 1 ? currentPage - number : currentPage,
-    //   };
-    // });
   };
 
   setCurrentPage = (number = 1) => {
@@ -83,7 +70,6 @@ class HomePage extends Component {
       ...location,
       search: `currentPage=${number}`,
     });
-    // this.setState({ currentPage: number });
   };
 
   render() {
